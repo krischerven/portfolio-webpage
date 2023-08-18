@@ -1,0 +1,13 @@
+#+title: README
+
+#+subtitle: Installation
+#+BEGIN_SRC bash
+pip install -r requirements.txt
+#+END_SRC
+
+#+subtitle: Deployment
+Use one of:
+#+BEGIN_SRC bash
+./serve.py # Unix
+python serve.py # Windows
+#+END_SRC
