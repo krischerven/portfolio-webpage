@@ -4,15 +4,15 @@ br.break {
 
 div.codearea {
   position: relative;
-  left: 3%;
+  left: 3em;
 }
 
 /* pre.code does not work here; lowering the width below 100% will leave the
    language indicator hanging out. It has to be <div><pre><code></code></pre></div> */
 div.codearea.code, div.codearea div.code {
-  width: 60%;
+  width: 90%;
 }
 
 div.code pre {
-  height: 600px;
+  height: 1000px;
 }
