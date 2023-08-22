@@ -33,7 +33,8 @@
      (lev-compiler "lev*" ,bindings ,@forms)
      (let* ,bindings ,@forms)))
 
-;; NOTE The following lists are dynamically created throughout a real codebase. They are incomplete here.
+;; NOTE: The following lists are dynamically created throughout a real codebase using a special macro.
+;; They are incomplete in this snippet.
 
 ;; Forbid (setf CONST VALUE) etc
 (defvar .lev-forbidden-car-parameters
@@ -43,13 +44,13 @@
 (defvar .lev-forbidden-cadr-parameters (list 'push 'delete 'delete-if 'edelete))
 
 ;; Forbid (lev ((CONST (POINTER))) ...) etc
-(defvar .lev-inherently-mutable-cars nil)
+(defvar .lev-inherently-mutable-cars (list 'pointer))
 
 ;; Forbid (setf (nth* N CONST) ...),
 ;;        (push VALUE (nth* N CONST))
 ;;
 ;; where nth* is any number of nested nth forms
-;; NOTE only forbidden when used with .lev-forbidden-ca(d)r-parameters
+;; NOTE: only forbidden when used with .lev-forbidden-ca(d)r-parameters
 (defvar .lev-forbidden-recursive-cadr-forms (list 'car 'cdr 'nth 'symbol-value 'gethash))
 
 (defmacro lev-compiler (name bindings &body forms)

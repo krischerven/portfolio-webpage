@@ -1,5 +1,6 @@
-;; Minimal dependencies required to compile the previous code snippet.
+;; Assorted dependencies required to compile the previous code snippet.
 ;; This file will only be of interest to you if you want to test the lev/lev* macro.
+;; Simply evaluate this file first, then lev.lisp second (only SBCL is supported.)
 ;; ---------------------------------------------------------------------------------
 ;;
 (eval-when (:compile-toplevel :load-toplevel :execute)
@@ -62,3 +63,6 @@
 
 (deftype list-of-lists ()
   `(satisfies list-of-lists-p))
+
+(defun pointer (&optional to)
+  (list to))

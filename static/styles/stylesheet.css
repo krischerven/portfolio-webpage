@@ -1,18 +1,50 @@
+/* # #################################### #
+   # stylesheet.css: CSS for landing.html #
+   # #################################### # */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 1em;
+}
+
 br.break {
   margin-bottom: 2%;
 }
 
 div.codearea {
-  position: relative;
-  left: 3em;
+  position: absolute; /* must be absolute, or language indicator (top right) breaks */
+  left: 22em;
 }
 
 /* pre.code does not work here; lowering the width below 100% will leave the
    language indicator hanging out. It has to be <div><pre><code></code></pre></div> */
-div.codearea.code, div.codearea div.code {
-  width: 90%;
+div.codearea code {
+  /* width: 80%; */
+  /* height: 100px; */
+  /* height: 100%; */
+  /* max-width: 80vw; */
+  font-size: 1.1em;
 }
 
-div.code pre {
-  height: 1000px;
+pre {
+  width:80vw;
+  height:80vh;
+  /* max-height: 80vh; */
 }
+
+/* code { */
+/*   height: 100px; */
+/* } */
+
+/* div.codearea { */
+/*   flex: 0.1; */
+/*   height: 10%; */
+/* } */
+
+/* div.code pre { */
+/*   /\* height: 75vh; *\/ */
+/*   flex: 1; */
+/* } */
