@@ -39,7 +39,7 @@ def landing():
 def main():
     "Main function"
     logger.debug("Serving landing.html")
-    waitress.serve(app, listen="*:8080")
+    waitress.serve(app, listen="*:80")
     logger.debug("Program exited (0)")
 
 
