@@ -39,6 +39,8 @@ def landing():
 
 def main():
     "Main function"
+    logger.debug("Running git pull...")
+    os.system("git pull")
     port = 80
     if len(sys.argv) > 1 and sys.argv[1] == "+local":
         port = 8080
