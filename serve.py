@@ -11,7 +11,7 @@ import sys
 import flask
 import waitress
 
-app = flask.Flask(__name__, template_folder=os.getcwd(), static_folder="static")
+app = flask.Flask(__name__, template_folder=os.getcwd(), static_folder=".well-known")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 logging.basicConfig()
