@@ -6,6 +6,7 @@
 
 import logging
 import os
+import sys
 
 import flask
 import waitress
@@ -38,8 +39,11 @@ def landing():
 
 def main():
     "Main function"
-    logger.debug("Serving landing.html")
-    waitress.serve(app, listen="*:80")
+    port = 80
+    if len(sys.argv) > 1 and sys.argv[1] == "+local":
+        port = 8080
+    logger.debug(f"Serving landing.html on port {port}")
+    waitress.serve(app, listen=f"*:{port}")
     logger.debug("Program exited (0)")
 
 
