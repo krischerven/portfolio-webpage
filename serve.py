@@ -39,11 +39,6 @@ def landing():
 def main():
     "Main function"
     logger.debug("Serving landing.html")
-    # waitress.serve(app, listen="*:8129")
-    # waitress.serve(app, host='0.0.0.0', port=8129)
-    # waitress.serve(app, host="0.0.0.0")
-    # app.run(debug=True)
-    # app.run(host="0.0.0.0", debug=True)
     waitress.serve(app, listen="*:8080")
     logger.debug("Program exited (0)")
 
