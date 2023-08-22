@@ -42,9 +42,9 @@ def main():
     # waitress.serve(app, listen="*:8129")
     # waitress.serve(app, host='0.0.0.0', port=8129)
     # waitress.serve(app, host="0.0.0.0")
-    #waitress.serve(app, listen="*:8080")
     # app.run(debug=True)
-    app.run(host="0.0.0.0", debug=True)
+    # app.run(host="0.0.0.0", debug=True)
+    waitress.serve(app, listen="*:8080")
     logger.debug("Program exited (0)")
 
 
