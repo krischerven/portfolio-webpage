@@ -6,3 +6,5 @@ __pycache__
 vultr*
 ssh-vultr.org
 *.zip
+# FIXME
+formatter
