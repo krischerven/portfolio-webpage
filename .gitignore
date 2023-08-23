@@ -8,3 +8,9 @@ meta.org
 # FIXME
 formatter
 SSL/
+bin/
+include/
+lib/
+# symlinked to lib
+lib64
+pyvenv.cfg
