@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# ############################################################ #
-# serve.py: A simple Python Flask script to host my portfolio. #
-# ############################################################ #
+# ################################################### #
+# main.py: A simple Flask app to host this portfolio. #
+# ################################################### #
 
 import logging
 import os
