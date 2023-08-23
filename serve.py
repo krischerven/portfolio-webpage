@@ -41,7 +41,7 @@ def main():
     "Main function"
     logger.debug("Running git pull...")
     os.system("git pull")
-    port = 80
+    port = 8080
     if len(sys.argv) > 1 and sys.argv[1] == "+local":
         port = 8080
     logger.debug(f"Serving landing.html on port {port}")
