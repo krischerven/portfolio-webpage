@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve resume-webpage
+After=network.target
+
+[Service]
+User=dev
+Group=www-data
+WorkingDirectory=/home/dev/resume-webpage
+Environment="PATH=/home/dev/resume-webpage/bin"
+ExecStart=/home/dev/resume-webpage/bin/gunicorn --workers 3 --bind unix:resume-webpage.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
