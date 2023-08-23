@@ -44,7 +44,7 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "+local":
         port = 8080
     logger.debug(f"Serving landing.html on port {port}")
-    app.run("0.0.0.0")
+    app.run("0.0.0.0", port=port)
     logger.debug("Program exited (0)")
 
 
