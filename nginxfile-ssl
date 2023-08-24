@@ -1,3 +1,4 @@
+# Run ./create-nginx-symlinks
 server {
 
   listen 80;

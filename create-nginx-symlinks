@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Symlinking nginxfile-ssl to relevant directories..."
+if [ -f /etc/nginx/sites-available/resume-webpage ]; then
+  sudo rm /etc/nginx/sites-available/resume-webpage
+fi
+if [ -f /etc/nginx/sites-enabled/resume-webpage ]; then
+  sudo rm /etc/nginx/sites-enabled/resume-webpage
+fi
+sudo ln -s "$PWD"/nginxfile-ssl /etc/nginx/sites-available/resume-webpage
+sudo ln -s "$PWD"/nginxfile-ssl /etc/nginx/sites-enabled/resume-webpage
+echo "Running 'systemctl restart nginx'..."
+sudo systemctl restart nginx
+echo "All done."
