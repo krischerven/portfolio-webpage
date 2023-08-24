@@ -2,6 +2,30 @@
    # stylesheet.css: CSS for landing.html #
    # #################################### # */
 
+@font-face {
+  src: url("../fonts/DejaVuSansMono/DejaVuSansMono.ttf");
+  font-family: 'DejaVuSansMono';
+}
+
+@font-face {
+  src: url("../fonts/DejaVuSansMono/DejaVuSansMono-Oblique.ttf");
+  font-family: 'DejaVuSansMono';
+  font-style: italic;
+}
+
+@font-face {
+  src: url("../fonts/DejaVuSansMono/DejaVuSansMono-Bold.ttf");
+  font-family: 'DejaVuSansMono';
+  font-weight: bold;
+}
+
+@font-face {
+  src: url("../fonts/DejaVuSansMono/DejaVuSansMono-BoldOblique.ttf");
+  font-family: 'DejaVuSansMono';
+  font-weight: bold;
+  font-style: italic;
+}
+
 html, body {
   height: 100%;
 }
@@ -27,6 +51,7 @@ div.codearea code {
   /* height: 100%; */
   /* max-width: 80vw; */
   font-size: 1.1em;
+  font-family: 'DejaVu Sans Mono';
 }
 
 pre {
