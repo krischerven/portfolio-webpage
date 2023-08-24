@@ -1,4 +1,6 @@
 # Run ./create-nginx-symlinks
+
+# krischerven.info (no SSL)
 server {
 
   listen 80;
@@ -9,9 +11,11 @@ server {
     proxy_pass http://unix:/home/dev/resume-webpage/resume-webpage.sock;
   }
 
+  # HTTPS redirection
   return 301 https://krischerven.info$request_uri;
 }
 
+# krischerven.info (SSL)
 server {
 
   listen 443 ssl;
