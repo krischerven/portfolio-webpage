@@ -46,10 +46,6 @@ div.codearea {
 /* pre.code does not work here; lowering the width below 100% will leave the
    language indicator hanging out. It has to be <div><pre><code></code></pre></div> */
 div.codearea code {
-  /* width: 80%; */
-  /* height: 100px; */
-  /* height: 100%; */
-  /* max-width: 80vw; */
   font-size: 1.1em;
   font-family: 'DejaVu Sans Mono';
 }
@@ -57,19 +53,4 @@ div.codearea code {
 pre {
   width:80vw;
   height:80vh;
-  /* max-height: 80vh; */
 }
-
-/* code { */
-/*   height: 100px; */
-/* } */
-
-/* div.codearea { */
-/*   flex: 0.1; */
-/*   height: 10%; */
-/* } */
-
-/* div.code pre { */
-/*   /\* height: 75vh; *\/ */
-/*   flex: 1; */
-/* } */
