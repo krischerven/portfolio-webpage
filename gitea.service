@@ -1,0 +1,11 @@
+[Unit]
+Description=Gitea instance
+After=network.target
+
+[Service]
+User=dev
+WorkingDirectory=/home/dev/gitea
+ExecStart=/home/dev/gitea/gitea
+
+[Install]
+WantedBy=multi-user.target

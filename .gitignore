@@ -4,6 +4,7 @@ todo.org
 __pycache__
 vultr*
 meta.org
+credentials.org
 *.zip
 # FIXME
 formatter
