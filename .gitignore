@@ -15,3 +15,5 @@ lib/
 # symlinked to lib
 lib64
 pyvenv.cfg
+# incomplete
+letsencrypt-usage.org
