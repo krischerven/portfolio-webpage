@@ -41,8 +41,8 @@ def landing():
                                  website_snippet_4=stylesheet_snippet)
 
 
-def main():
-    "Main function"
+def server_work():
+    "Run important server work before anything goes live"
     logger.debug("Running git pull...")
     os.system("git pull")
     if os.system("which npx > /dev/null 2>&1") == 256:
@@ -57,6 +57,11 @@ def main():
     if os.system("./tscompile") == 256:
         logger.debug("./tscompile failed to run, aborting.")
         exit(1)
+
+
+def main():
+    "Main function"
+    server_work()
     logger.debug("Serving landing.html")
     debug_mode = len(sys.argv) > 1 and sys.argv[1] == "+debug"
     app.run("0.0.0.0", debug=debug_mode)
