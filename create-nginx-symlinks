@@ -1,11 +1,7 @@
 #!/bin/bash
 echo "Symlinking ./nginx to relevant directories..."
-if [ -f /etc/nginx/sites-available/resume-webpage ]; then
-  sudo rm /etc/nginx/sites-available/resume-webpage
-fi
-if [ -f /etc/nginx/sites-enabled/resume-webpage ]; then
-  sudo rm /etc/nginx/sites-enabled/resume-webpage
-fi
+sudo rm /etc/nginx/sites-available/resume-webpage > /dev/null 2>&1
+sudo rm /etc/nginx/sites-enabled/resume-webpage > /dev/null 2>&1
 sudo ln -s "$PWD"/nginx /etc/nginx/sites-available/resume-webpage
 sudo ln -s "$PWD"/nginx /etc/nginx/sites-enabled/resume-webpage
 echo "Running 'systemctl restart nginx'..."
