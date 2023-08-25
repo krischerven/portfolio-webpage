@@ -2,10 +2,16 @@
 
 # ################################################### #
 # main.py: A simple Flask app to host this portfolio. #
+#                                                     #
+# Usage:                                              #
+#   ./main.py                                         #
+#   ./main.py +debug                                  #
+#                                                     #
 # ################################################### #
 
 import logging
 import os
+import sys
 
 import flask
 
@@ -40,7 +46,8 @@ def main():
     logger.debug("Running git pull...")
     os.system("git pull")
     logger.debug("Serving landing.html")
-    app.run("0.0.0.0")
+    debug_mode = len(sys.argv) > 1 and sys.argv[1] == "+debug"
+    app.run("0.0.0.0", debug=debug_mode)
     logger.debug("Program exited (0)")
 
 
