@@ -45,6 +45,10 @@ def main():
     "Main function"
     logger.debug("Running git pull...")
     os.system("git pull")
+    logger.debug("Running ./tscompile...")
+    if os.system("./tscompile") == 256:
+        logger.debug("./tscompile failed to run, aborting.")
+        exit(1)
     logger.debug("Serving landing.html")
     debug_mode = len(sys.argv) > 1 and sys.argv[1] == "+debug"
     app.run("0.0.0.0", debug=debug_mode)
