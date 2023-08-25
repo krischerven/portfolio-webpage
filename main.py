@@ -45,6 +45,14 @@ def main():
     "Main function"
     logger.debug("Running git pull...")
     os.system("git pull")
+    if os.system("which npx > /dev/null 2>&1") == 256:
+        logger.debug("npx (npm) does not exist in the system path, so ./tscompile is "
+                     "unrunnable. Aborting. Please install npm or make npx available "
+                     "in the system path.")
+        exit(1)
+    if os.system("which tsc > /dev/null 2>&1") == 256:
+        logger.debug("tsc does not exist in the system path; installing it globally...")
+        os.system("sudo npm install -g typescript")
     logger.debug("Running ./tscompile...")
     if os.system("./tscompile") == 256:
         logger.debug("./tscompile failed to run, aborting.")
