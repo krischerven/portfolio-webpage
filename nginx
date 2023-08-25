@@ -29,3 +29,18 @@ server {
     proxy_pass http://unix:/home/dev/resume-webpage/resume-webpage.sock;
   }
 }
+
+# git.krischerven.info (SSL)
+server {
+
+  listen 443 ssl;
+  ssl_certificate /home/dev/resume-webpage/SSL/krischerven_info_chain.crt;
+  ssl_certificate_key /home/dev/resume-webpage/SSL/krischerven_info.pem;
+
+  server_name git.krischerven.info;
+
+  location / {
+    include proxy_params;
+    proxy_pass https://krischerven.info:3000;
+  }
+}
