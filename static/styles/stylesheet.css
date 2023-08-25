@@ -26,31 +26,55 @@
   font-style: italic;
 }
 
-html, body {
-  height: 100%;
-}
-
-body {
-  font-size: 1em;
-}
-
 br.break {
   margin-bottom: 2%;
 }
 
-div.codearea {
-  position: absolute; /* must be absolute, or language indicator (top right) breaks */
-  left: 22em;
+div.side-navbar {
+  -ms-flex: 0 0 12%;
+  flex: 0 0 12%;
+  font-size: 1.2em;
 }
 
-/* pre.code does not work here; lowering the width below 100% will leave the
-   language indicator hanging out. It has to be <div><pre><code></code></pre></div> */
-div.codearea code {
-  font-size: 1.1em;
+div.codearea {
+  width: 33.3%;
+  max-width: 100%;
+}
+
+.tab-content pre {
+  max-height:90vh;
+}
+
+div.codearea pre code {
   font-family: 'DejaVu Sans Mono';
 }
 
-pre {
-  width:80vw;
-  height:80vh;
+@media (min-width: 413px) {
+  div.codearea pre code {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1119px) {
+  div.codearea pre code {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1231px) {
+  div.codearea pre code {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1343px) {
+  div.codearea pre code {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1455px) {
+  div.codearea pre code {
+    font-size: 18px;
+  }
 }

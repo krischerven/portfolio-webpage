@@ -16,7 +16,7 @@
 <body class="line-numbers match-braces">
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#" style="margin-left:0.8em">Kris Cherven: Technical Portfolio</a>
+  <a class="navbar-brand" href="#" style="margin-left:0.8em">Kris Cherven</a>
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/kris-cherven">LinkedIn</a>
@@ -40,185 +40,182 @@
   </ul>
 </nav>
 
-<div>
+<!-- FIXME better way of doing the margin? -->
+<div class="container-fluid" style="margin-top:2em;">
 
-  <br class="break"/>
+  <div class="row">
 
-  <!-- Side navbar: Website Source, Metaprogramming, etc -->
-  <div class="container" style="position:absolute;left:1em">
-    <div class="row">
-      <div class="col-md-3">
-        <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active mx-auto" id="welcome-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('welcome')">Technical Portfolio</button>
-            <hr style="margin-top: 0.2em">
-          </li>
-          <!-- These are ordered by importance. The associated elements are not, by design -->
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="website-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('website')">Portfolio implementation</button>
-          </li>
-          <!-- <li class="nav-item" role="presentation"> -->
-          <!--   <button class="nav-link" id="typescript-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('typescript')">Website Chatbot</button> -->
-          <!-- </li> -->
-          <!-- <li class="nav-item" role="presentation"> -->
-          <!--   <button class="nav-link" id="rust-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('rust')">Resume Parser</button> -->
-          <!-- </li> -->
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="metaprog-toggle" data-bs-toggle="tab" type="button" aria-selected="true" onclick="javascript:set_code_tab('metaprog')">CL Metaprogramming</button>
-          </li>
-        </ul>
+    <br class="break"/>
+
+    <!-- Side navbar: Website Source, Metaprogramming, etc -->
+    <div class="col side-navbar" style="left:1em;">
+      <div class="row">
+        <div class="col">
+          <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active mx-auto" id="welcome-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('welcome')">Technical Portfolio</button>
+              <hr style="margin-top: 0.2em">
+            </li>
+            <!-- These are ordered by importance. The associated elements are not, by design -->
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="website-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('website')">Portfolio implementation</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation"> -->
+            <!--   <button class="nav-link" id="typescript-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('typescript')">Website Chatbot</button> -->
+            <!-- </li> -->
+            <!-- <li class="nav-item" role="presentation"> -->
+            <!--   <button class="nav-link" id="rust-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('rust')">Resume Parser</button> -->
+            <!-- </li> -->
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="metaprog-toggle" data-bs-toggle="tab" type="button" aria-selected="true" onclick="javascript:set_code_tab('metaprog')">Practical metaprogramming</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col codearea">
+
+      <!-- Upper navbar: Used for toggling different parts of a snippet (1/2, 2/2, et al.) -->
+      <!-- <ul class="nav nav-pills" id="welcome-tab" role="tablist"> -->
+      <!--   <li class="nav-item" role="presentation"> -->
+      <!--     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#welcome-code-1" type="button" role="tab" aria-controls="welcome-code-1" aria-selected="true">1/2</button> -->
+      <!--   </li> -->
+      <!-- </ul> -->
+
+      <ul class="nav nav-pills" id="metaprog-tab" role="tablist" style="display:none">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#metaprog-code-1" type="button" role="tab" aria-controls="metaprog-code-1" aria-selected="true">1/2</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#metaprog-code-2" type="button" role="tab" aria-controls="metaprog-code-2" aria-selected="false">2/2</button>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills" id="website-tab" role="tablist" style="display:none">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#website-code-1" type="button" role="tab" aria-controls="website-code-1" aria-selected="true">1/4</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-2" type="button" role="tab" aria-controls="website-code-2" aria-selected="false">2/4</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-3" type="button" role="tab" aria-controls="website-code-3" aria-selected="false">3/4</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-4" type="button" role="tab" aria-controls="website-code-4" aria-selected="false">4/4</button>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills" id="typescript-tab" role="tablist" style="display:none">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#typescript-code-1" type="button" role="tab" aria-controls="typescript-code-1" aria-selected="true">1/2</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#typescript-code-2" type="button" role="tab" aria-controls="typescript-code-2" aria-selected="false">2/2</button>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills" id="rust-tab" role="tablist" style="display:none">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#rust-code-1" type="button" role="tab" aria-controls="rust-code-1" aria-selected="true">1/2</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rust-code-2" type="button" role="tab" aria-controls="rust-code-2" aria-selected="false">2/2</button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="welcome-tab-content">
+        <div class="tab-pane fade show active" id="welcome-code-1" role="tabpanel" aria-labelledby="welcome-tab-1">
+          <h1 class="display-1">Welcome.</h1>
+          <h2>This page is under construction, but please feel free to take a look around.<br>For questions and concerns, please contact me via <span class="text-info">krischerven@gmail.com</span>.</h2>
+        </div>
+      </div>
+
+      <!-- FIXME default display -->
+      <div class="tab-content" id="metaprog-tab-content" style="display:none">
+        <div class="tab-pane fade show active" id="metaprog-code-1" role="tabpanel" aria-labelledby="metaprog-tab-1">
+          <pre class="language-lisp">
+            <code class="language-lisp">
+            {{ metaprog_snippet_1 }}
+            </code>
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="metaprog-code-2" role="tabpanel" aria-labelledby="metaprog-tab-2">
+          <pre class="language-lisp">
+            <code class="language-lisp">
+            {{ metaprog_snippet_2 }}
+            </code>
+          </pre>
+        </div>
+      </div>
+
+      <div class="tab-content" id="website-tab-content" style="display:none">
+        <div class="tab-pane fade show active" id="website-code-1" role="tabpanel" aria-labelledby="website-tab-1">
+          <pre class="language-python">
+            <code class="language-python">
+            {{ website_snippet_1 }}
+            </code>
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="website-code-2" role="tabpanel" aria-labelledby="website-tab-2">
+          <pre class="language-html">
+            <code class="language-html">
+            {{ website_snippet_2 }}
+            </code>
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="website-code-3" role="tabpanel" aria-labelledby="website-tab-3">
+          <pre class="language-typescript">
+            <code class="language-typescript">
+            {{ website_snippet_3 }}
+            </code>
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="website-code-4" role="tabpanel" aria-labelledby="website-tab-4">
+          <pre class="language-css">
+            <code class="language-css">
+            {{ website_snippet_4 }}
+            </code>
+          </pre>
+        </div>
+      </div>
+
+      <div class="tab-content" id="typescript-tab-content" style="display:none">
+        <div class="tab-pane fade show active" id="typescript-code-1" role="tabpanel" aria-labelledby="typescript-tab-1">
+          <pre class="language-javascript">
+            <code class="language-javascript">
+            {{ typescript_metaprog_snippet_1 }}
+            </code>
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="typescript-code-2" role="tabpanel" aria-labelledby="typescript-tab-2">
+          <pre class="language-javascript">
+            <code class="language-javascript">
+            {{ typescript_metaprog_snippet_2 }}
+            </code>
+          </pre>
+        </div>
+      </div>
+
+      <div class="tab-content" id="rust-tab-content" style="display:none">
+        <div class="tab-pane fade show active" id="rust-code-1" role="tabpanel" aria-labelledby="rust-tab-1">
+          <pre class="language-rust">
+            <code class="language-rust">
+            {{ rust_metaprog_snippet_1 }}
+            </code>
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="rust-code-2" role="tabpanel" aria-labelledby="rust-tab-2">
+          <pre class="language-rust">
+            <code class="language-rust">
+            {{ rust_metaprog_snippet_2 }}
+            </code>
+          </pre>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="codearea">
-
-    <!-- Upper navbar: Used for toggling different parts of a snippet (1/2, 2/2, et al.) -->
-    <!-- <ul class="nav nav-pills" id="welcome-tab" role="tablist"> -->
-    <!--   <li class="nav-item" role="presentation"> -->
-    <!--     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#welcome-code-1" type="button" role="tab" aria-controls="welcome-code-1" aria-selected="true">1/2</button> -->
-    <!--   </li> -->
-    <!-- </ul> -->
-
-    <ul class="nav nav-pills" id="metaprog-tab" role="tablist" style="display:none">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#metaprog-code-1" type="button" role="tab" aria-controls="metaprog-code-1" aria-selected="true">1/2</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#metaprog-code-2" type="button" role="tab" aria-controls="metaprog-code-2" aria-selected="false">2/2</button>
-      </li>
-    </ul>
-
-    <ul class="nav nav-pills" id="website-tab" role="tablist" style="display:none">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#website-code-1" type="button" role="tab" aria-controls="website-code-1" aria-selected="true">1/4</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-2" type="button" role="tab" aria-controls="website-code-2" aria-selected="false">2/4</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-3" type="button" role="tab" aria-controls="website-code-3" aria-selected="false">3/4</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-4" type="button" role="tab" aria-controls="website-code-4" aria-selected="false">4/4</button>
-      </li>
-    </ul>
-
-    <ul class="nav nav-pills" id="typescript-tab" role="tablist" style="display:none">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#typescript-code-1" type="button" role="tab" aria-controls="typescript-code-1" aria-selected="true">1/2</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#typescript-code-2" type="button" role="tab" aria-controls="typescript-code-2" aria-selected="false">2/2</button>
-      </li>
-    </ul>
-
-    <ul class="nav nav-pills" id="rust-tab" role="tablist" style="display:none">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#rust-code-1" type="button" role="tab" aria-controls="rust-code-1" aria-selected="true">1/2</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rust-code-2" type="button" role="tab" aria-controls="rust-code-2" aria-selected="false">2/2</button>
-      </li>
-    </ul>
-
-    <div class="tab-content" id="welcome-tab-content">
-      <div class="tab-pane fade show active" id="welcome-code-1" role="tabpanel" aria-labelledby="welcome-tab-1">
-        <h1 style="font-size: 6em">Welcome.</h1>
-        <h2 style="font-size: 2em; margin-left:0em">This page is still under construction, but please feel free to take a look around.</h2>
-        <h2 style="font-size: 2em; margin-left:0em">For questions and concerns, please contact me via <span class="text-info">krischerven@gmail.com</span>.</h2>
-      </div>
-    </div>
-
-    <!-- FIXME default display -->
-    <div class="tab-content" id="metaprog-tab-content" style="display:none">
-      <div class="tab-pane fade show active" id="metaprog-code-1" role="tabpanel" aria-labelledby="metaprog-tab-1">
-        <pre class="language-lisp">
-          <code class="language-lisp">
-          {{ metaprog_snippet_1 }}
-          </code>
-        </pre>
-      </div>
-      <div class="tab-pane fade" id="metaprog-code-2" role="tabpanel" aria-labelledby="metaprog-tab-2">
-        <pre class="language-lisp">
-          <code class="language-lisp">
-          {{ metaprog_snippet_2 }}
-          </code>
-        </pre>
-      </div>
-    </div>
-
-    <div class="tab-content" id="website-tab-content" style="display:none">
-      <div class="tab-pane fade show active" id="website-code-1" role="tabpanel" aria-labelledby="website-tab-1">
-        <pre class="language-python">
-          <code class="language-python">
-          {{ website_snippet_1 }}
-          </code>
-        </pre>
-      </div>
-      <div class="tab-pane fade" id="website-code-2" role="tabpanel" aria-labelledby="website-tab-2">
-        <pre class="language-html">
-          <code class="language-html">
-          {{ website_snippet_2 }}
-          </code>
-        </pre>
-      </div>
-      <div class="tab-pane fade" id="website-code-3" role="tabpanel" aria-labelledby="website-tab-3">
-        <pre class="language-typescript">
-          <code class="language-typescript">
-          {{ website_snippet_3 }}
-          </code>
-        </pre>
-      </div>
-      <div class="tab-pane fade" id="website-code-4" role="tabpanel" aria-labelledby="website-tab-4">
-        <pre class="language-css">
-          <code class="language-css">
-          {{ website_snippet_4 }}
-          </code>
-        </pre>
-      </div>
-    </div>
-
-    <div class="tab-content" id="typescript-tab-content" style="display:none">
-      <div class="tab-pane fade show active" id="typescript-code-1" role="tabpanel" aria-labelledby="typescript-tab-1">
-        <pre class="language-javascript">
-          <code class="language-javascript">
-          {{ typescript_metaprog_snippet_1 }}
-          </code>
-        </pre>
-      </div>
-      <div class="tab-pane fade" id="typescript-code-2" role="tabpanel" aria-labelledby="typescript-tab-2">
-        <pre class="language-javascript">
-          <code class="language-javascript">
-          {{ typescript_metaprog_snippet_2 }}
-          </code>
-        </pre>
-      </div>
-    </div>
-
-    <div class="tab-content" id="rust-tab-content" style="display:none">
-      <div class="tab-pane fade show active" id="rust-code-1" role="tabpanel" aria-labelledby="rust-tab-1">
-        <pre class="language-rust">
-          <code class="language-rust">
-          {{ rust_metaprog_snippet_1 }}
-          </code>
-        </pre>
-      </div>
-      <div class="tab-pane fade" id="rust-code-2" role="tabpanel" aria-labelledby="rust-tab-2">
-        <pre class="language-rust">
-          <code class="language-rust">
-          {{ rust_metaprog_snippet_2 }}
-          </code>
-        </pre>
-      </div>
-    </div>
-  </div>
-
-  <br class="break"/>
-  <code>
-  {{ portofolio_bot_snippet }}
-  </code>
-
 </div>
 
 <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
