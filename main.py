@@ -24,14 +24,14 @@ def landing():
     lev_deps_snippet = open("snippets/lev-dependencies.lisp", "r", encoding="UTF-8").read()
     serve_snippet = open(__file__, "r", encoding="UTF-8").read()
     landing_snippet = open("landing.html", "r", encoding="UTF-8").read()
-    mainjs_snippet = open("static/javascript/main.js", "r", encoding="UTF-8").read()
+    maints_snippet = open("static/javascript/main.ts", "r", encoding="UTF-8").read()
     stylesheet_snippet = open("stylesheet.css", "r", encoding="UTF-8").read()
     return flask.render_template("landing.html",
                                  metaprog_snippet_1=lev_snippet,
                                  metaprog_snippet_2=lev_deps_snippet,
                                  website_snippet_1=serve_snippet,
                                  website_snippet_2=landing_snippet,
-                                 website_snippet_3=mainjs_snippet,
+                                 website_snippet_3=maints_snippet,
                                  website_snippet_4=stylesheet_snippet)
 
 

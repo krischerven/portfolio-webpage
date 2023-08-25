@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": [
+      "es6",
+      "DOM"
+    ],
+    "module": "commonjs",
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+    "noEmitOnError": true
+  },
+  "files": [
+    "./main.ts"
+  ]
+}

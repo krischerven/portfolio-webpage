@@ -1,0 +1,2 @@
+#!/bin/bash
+npx tsc -p ./static/javascript/tsconfig.json # --showConfig
