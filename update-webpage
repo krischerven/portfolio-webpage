@@ -5,6 +5,8 @@ if [ "$(basename "$PWD")" != "resume-webpage" ]; then
 fi
 git fetch
 git reset --hard origin/master
-echo "Running 'sudo systemctl restart resume-webpage'. You may be asked for your password."
+echo "Running 'sudo systemctl daemon-reload'. You may be asked for your password."
+sudo systemctl daemon-reload
+echo "Running 'sudo systemctl restart resume-webpage'"
 sudo systemctl restart resume-webpage
 echo "All done."
