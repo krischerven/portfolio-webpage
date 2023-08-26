@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ "$(basename "$PWD")" != "resume-webpage" ]; then
+   echo "Wrong directory; Please cd to your nearest resume-webpage."
+   exit 0
+fi
+git fetch
+git reset --hard origin/master
+echo "Running 'sudo systemctl restart resume-webpage'. You may be asked for your password."
+sudo systemctl restart resume-webpage
+echo "All done."
