@@ -96,14 +96,14 @@
                                           (when (and
                                                  (not (efind basic-form allowed-rebindings))
                                                  (find-one basic-form forbidden-rebindings))
-                                            (error "Modification of binding in (~A) via (~A): ~A" name (car twig) twig))))
+                                            (error "Modification of binding in (~A) via (~A): form is ~A" name (car twig) twig))))
                                        ;; (push <val> <binding>), etc
                                        ((find (car twig) .lev-forbidden-cadr-parameters)
                                         (let ((basic-form (basic-form (third twig))))
                                           (when (and
                                                  (not (efind basic-form allowed-rebindings))
                                                  (find-one basic-form forbidden-rebindings))
-                                            (error "Modification of binding in (~A) via (~A): ~A" name (car twig) twig))))
+                                            (error "Modification of binding in (~A) via (~A): form is ~A" name (car twig) twig))))
                                        (t (prohibit-rebindings twig forbidden-rebindings allowed-rebindings))))
                                     ;; For ,symbol ,(1 2 3) etc
                                     ((sb-int:comma-p twig)
