@@ -6,7 +6,7 @@ After=network.target
 User=dev
 Group=www-data
 WorkingDirectory=/home/dev/resume-webpage
-Environment="PATH=/home/dev/resume-webpage/bin"
+Environment="PATH=/usr/bin:/usr/local/bin:/home/dev/resume-webpage/bin"
 ExecStart=/home/dev/resume-webpage/bin/gunicorn --workers 3 --bind unix:resume-webpage.sock -m 007 main:app
 
 [Install]
