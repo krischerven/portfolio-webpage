@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-# ################################################### #
-# main.py: A simple Flask app to host this portfolio. #
-#                                                     #
-# Usage:                                              #
-#   ./main.py                                         #
-#   ./main.py +debug                                  #
-#                                                     #
-# ################################################### #
+# ################################################## #
+# main.py: A simple Flask app to host the portfolio. #
+#                                                    #
+# Usage:                                             #
+#   ./main.py                                        #
+#   ./main.py +debug                                 #
+#                                                    #
+# ################################################## #
 
 import logging
 import os
