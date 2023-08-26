@@ -3,7 +3,7 @@
    # ################################################### # */
 
 function set_code_tab(name: String) {
-  for (const lang of ["welcome", "metaprog", "website", "typescript", "rust"]) {
+  for (const lang of ["welcome", "metaprog", "website"]) {
     const x = document.getElementById(`${lang}-tab`)
     if (x != null)
       x.style.display = "none"

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
-<!-- # ######################################################################## -->
-<!-- # landing.html: The landing (and only) page of Kris Cherven's portfolio. # -->
-<!-- # ######################################################################## -->
+<!-- # ################################################ # -->
+<!-- # landing.html: The landing page of the portfolio. # -->
+<!-- # ################################################ # -->
 
 <html>
 <head>
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}">
 </head>
 
-<!-- See https://prismjs.com/plugins/line-numbers/#how-to-use -->
+<!-- See: https://prismjs.com/plugins/line-numbers/#how-to-use -->
 <body class="line-numbers match-braces">
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
@@ -24,23 +24,12 @@
     <li class="nav-item">
       <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/krischerven">GitHub</a>
     </li>
-    <!-- <li class="nav-item"> -->
-    <!--   <a class="nav-link" href="https://github.com/krischerven">View Source</a> -->
-    <!-- </li> -->
     <li class="nav-item">
       <a class="nav-link" target="_blank" rel="noopener noreferrer" href="{{ url_for('static', filename='misc/resume.pdf') }}">Resume</a>
-    </li>
-    <!-- FIXME remove comments -->
-    <!-- <li class="nav-item"> -->
-    <!--   <a class="nav-link" href="runbot()" style="position:absolute;right:0em">Ask an AI about me.</a> -->
-    <!-- </li> -->
-    <li class="nav-item">
-      <a class="nav-link" href="FIXME">Books</a>
     </li>
   </ul>
 </nav>
 
-<!-- FIXME better way of doing the margin? -->
 <div class="container-fluid" style="margin-top:2em;">
 
   <div class="row">
@@ -60,12 +49,6 @@
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="website-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('website')">Portfolio implementation</button>
             </li>
-            <!-- <li class="nav-item" role="presentation"> -->
-            <!--   <button class="nav-link" id="typescript-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('typescript')">Website Chatbot</button> -->
-            <!-- </li> -->
-            <!-- <li class="nav-item" role="presentation"> -->
-            <!--   <button class="nav-link" id="rust-toggle" data-bs-toggle="tab" type="button" aria-selected="false" onclick="javascript:set_code_tab('rust')">Resume Parser</button> -->
-            <!-- </li> -->
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="metaprog-toggle" data-bs-toggle="tab" type="button" aria-selected="true" onclick="javascript:set_code_tab('metaprog')">Practical metaprogramming</button>
             </li>
@@ -77,12 +60,6 @@
     <div class="col codearea">
 
       <!-- Upper navbar: Used for toggling different parts of a snippet (1/2, 2/2, et al.) -->
-      <!-- <ul class="nav nav-pills" id="welcome-tab" role="tablist"> -->
-      <!--   <li class="nav-item" role="presentation"> -->
-      <!--     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#welcome-code-1" type="button" role="tab" aria-controls="welcome-code-1" aria-selected="true">1/2</button> -->
-      <!--   </li> -->
-      <!-- </ul> -->
-
       <ul class="nav nav-pills" id="metaprog-tab" role="tablist" style="display:none">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#metaprog-code-1" type="button" role="tab" aria-controls="metaprog-code-1" aria-selected="true">1/2</button>
@@ -132,7 +109,6 @@
         </div>
       </div>
 
-      <!-- FIXME default display -->
       <div class="tab-content" id="metaprog-tab-content" style="display:none">
         <div class="tab-pane fade show active" id="metaprog-code-1" role="tabpanel" aria-labelledby="metaprog-tab-1">
           <pre class="language-lisp">
@@ -176,40 +152,6 @@
           <pre class="language-css">
             <code class="language-css">
             {{ website_snippet_4 }}
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <div class="tab-content" id="typescript-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="typescript-code-1" role="tabpanel" aria-labelledby="typescript-tab-1">
-          <pre class="language-javascript">
-            <code class="language-javascript">
-            {{ typescript_metaprog_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-        <div class="tab-pane fade" id="typescript-code-2" role="tabpanel" aria-labelledby="typescript-tab-2">
-          <pre class="language-javascript">
-            <code class="language-javascript">
-            {{ typescript_metaprog_snippet_2 }}
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <div class="tab-content" id="rust-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="rust-code-1" role="tabpanel" aria-labelledby="rust-tab-1">
-          <pre class="language-rust">
-            <code class="language-rust">
-            {{ rust_metaprog_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-        <div class="tab-pane fade" id="rust-code-2" role="tabpanel" aria-labelledby="rust-tab-2">
-          <pre class="language-rust">
-            <code class="language-rust">
-            {{ rust_metaprog_snippet_2 }}
             </code>
           </pre>
         </div>
