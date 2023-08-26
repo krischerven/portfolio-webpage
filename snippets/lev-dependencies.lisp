@@ -73,6 +73,15 @@ arguments."
   (declare (type elist elist))
   (find item (elist-sequence elist) :test test))
 
+(defun lastcar (list)
+  (car (last list)))
+
+(defun empty? (list)
+  (eql (length list) 0))
+
+(defun full? (list)
+  (not (empty? list)))
+
 (defun list-of-lists-p (x)
   (and (listp x)
        (full? x)
