@@ -1,28 +1,29 @@
-debug.org
-debugging.org
-WIP.org
-todo.org
-todo-later.org
-ideas.org
-__pycache__
-vultr*
-meta.org
+bin/
 credentials.org
-third-party-notes.org
-*.zip
+debugging.org
+debug.org
 # FIXME
 formatter
-SSL/
-bin/
+ideas.org
 include/
-lib/
-# symlinked to lib
-lib64
-pyvenv.cfg
 # incomplete
 letsencrypt-usage.org
+lib/
+lib64
+meta.org
+__pycache__
+pyvenv.cfg
 resume-webpage-untracked
-temp
-tmp
-static/javascript/main.js
+SSL/
 static/downloads/*
+static/javascript/main.js
+static/javascript/main.js
+# symlinked to lib
+temp
+third-party-notes.org
+tmp
+todo-later.org
+todo.org
+vultr*
+WIP.org
+*.zip
