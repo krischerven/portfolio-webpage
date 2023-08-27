@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ "$1" == "" ]; then
+    echo "Error: missing file name."
+    exit 0
+fi
+touch resume-webpage-untracked/"$1"
+ln "$PWD"/resume-webpage-untracked/"$1" "$PWD"
+echo "$1" >> .gitignore
+sort .gitignore -o .gitignore
