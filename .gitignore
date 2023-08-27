@@ -8,6 +8,7 @@ __pycache__
 vultr*
 meta.org
 credentials.org
+third-party-notes.org
 *.zip
 # FIXME
 formatter
