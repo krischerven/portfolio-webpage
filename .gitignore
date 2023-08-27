@@ -23,5 +23,6 @@ pyvenv.cfg
 letsencrypt-usage.org
 resume-webpage-untracked
 temp
+tmp
 static/javascript/main.js
 static/downloads/*
