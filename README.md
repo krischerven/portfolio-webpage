@@ -1,22 +1,23 @@
-#+title: README
+# README
 
-#+subtitle: Installation
-#+BEGIN_SRC bash
+## Installation
+```bash
 pip install -r requirements.txt
-#+END_SRC
+```
 
-#+subtitle: Deployment
+## Deployment
+
 To run locally:
-#+BEGIN_SRC bash
+```bash
 ./main.py      # Unix
 python main.py # Windows
-#+END_SRC
+```
 
 To run remotely:
-#+BEGIN_SRC bash
+```bash
 # install nginx
 ./create-nginx-symlinks
 sudo ln -s "$PWD"/resume-webpage.service /etc/systemd/system
 ./create-download-hardlinks
 sudo systemctl start resume-webpage
-#+END_SRC
+```
