@@ -19,7 +19,6 @@ screenfly.org
 SSL/
 static/downloads/*
 static/javascript/main.js
-static/javascript/main.js
 # symlinked to lib
 temp
 third-party-notes.org
