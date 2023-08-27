@@ -6,8 +6,16 @@ pip install -r requirements.txt
 #+END_SRC
 
 #+subtitle: Deployment
-Use one of:
+To run locally:
 #+BEGIN_SRC bash
-./serve.py # Unix
-python serve.py # Windows
+./main.py      # Unix
+python main.py # Windows
+#+END_SRC
+
+To run remotely:
+#+BEGIN_SRC bash
+# install nginx
+./create-nginx-symlinks
+sudo ln -s "$PWD"/resume-webpage.service /etc/systemd/system
+sudo systemctl start resume-webpage
 #+END_SRC
