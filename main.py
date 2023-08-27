@@ -38,7 +38,13 @@ def landing():
                                  website_snippet_1=serve_snippet,
                                  website_snippet_2=landing_snippet,
                                  website_snippet_3=maints_snippet,
-                                 website_snippet_4=stylesheet_snippet)
+                                 website_snippet_4=stylesheet_snippet,
+                                 metaprog_download_1="static/downloads/lev.lisp",
+                                 metaprog_download_2="static/downloads/lev-dependencies.lisp",
+                                 website_download_1="static/downloads/main.py",
+                                 website_download_2="static/downloads/landing.html",
+                                 website_download_3="static/downloads/main.ts",
+                                 website_download_4="static/downloads/stylesheet.css")
 
 
 def server_work():

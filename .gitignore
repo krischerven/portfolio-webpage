@@ -24,3 +24,4 @@ letsencrypt-usage.org
 resume-webpage-untracked
 temp
 static/javascript/main.js
+static/downloads/*

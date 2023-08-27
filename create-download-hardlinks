@@ -1,0 +1,6 @@
+#!/bin/bash
+ln landing.html static/downloads
+ln snippets/* static/downloads
+ln main.py static/downloads
+ln static/javascript/main.ts static/downloads
+ln static/styles/stylesheet.css static/downloads
