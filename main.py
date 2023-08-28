@@ -69,6 +69,10 @@ def server_work():
         return
     # NOTE: 0644 is default
     open(".server-work.lock", "w")
+    # This is 1) fast 2) never errors, so put it first
+    logger.debug("Running ./create-download-hardlinks")
+    os.system("./create-download-hardlinks")
+    #
     logger.debug("Running git pull...")
     os.system("git pull")
     if os.system("which npx > /dev/null 2>&1") == 256:

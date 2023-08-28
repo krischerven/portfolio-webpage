@@ -17,6 +17,5 @@ To run remotely:
 ```bash
 # install nginx
 ./create-symlinks
-./create-download-hardlinks
 sudo systemctl start portfolio-webpage
 ```
