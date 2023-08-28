@@ -81,8 +81,9 @@
                                        ;;  ^last ^current ^next twigs
                                        ((eql last-twig 'let)
                                         (when (list-of-lists-p twig)
-                                          ;; 1) New elist for this (let ...) - otherwise, these new bindings are allowed for
-                                          ;; everything that is evaluated after this point, regardless of scope.
+                                          ;; 1) New elist for this (let ...) - otherwise, these new bindings
+                                          ;; are allowed for everything that is evaluated after this point,
+                                          ;; regardless of scope.
                                           (setq allowed-rebindings (copy-elist allowed-rebindings))
                                           (dolist (binding twig)
                                             (let ((symbol (car binding)))
@@ -96,14 +97,16 @@
                                           (when (and
                                                  (not (efind basic-form allowed-rebindings))
                                                  (find-one basic-form forbidden-rebindings))
-                                            (error "Modification of binding in (~A) via (~A): form is ~A" name (car twig) twig))))
+                                            (error "Modification of binding in (~A) via (~A): form is ~A"
+                                                   name (car twig) twig))))
                                        ;; (push <val> <binding>), etc
                                        ((find (car twig) .lev-forbidden-cadr-parameters)
                                         (let ((basic-form (basic-form (third twig))))
                                           (when (and
                                                  (not (efind basic-form allowed-rebindings))
                                                  (find-one basic-form forbidden-rebindings))
-                                            (error "Modification of binding in (~A) via (~A): form is ~A" name (car twig) twig))))
+                                            (error "Modification of binding in (~A) via (~A): form is ~A"
+                                                   name (car twig) twig))))
                                        (t (prohibit-rebindings twig forbidden-rebindings allowed-rebindings))))
                                     ;; For ,symbol ,(1 2 3) etc
                                     ((sb-int:comma-p twig)
@@ -115,9 +118,9 @@
                               (setq last-twig twig))
                             branch)))
 
-                ;; We prohibit (lev ((x (pointer))) ...) because pointers are meant to be assigned at runtime in a way
-                ;; that is not cost-effective to prevent. You can still write (lev ((x (list))) ...) and do the same
-                ;; thing, which is an inherent limitation of this macro.
+                ;; We prohibit (lev ((x (pointer))) ...) because pointers are meant to be assigned at runtime
+                ;; in a way that is not cost-effective to prevent. You can still write (lev ((x (list))) ...)
+                ;; and do the same thing, which is an inherent limitation of this macro.
                 (prohibit-inherently-mutables (binding-values)
                   ;; (let nil) is valid (and returns nil), so (lev nil) is also valid
                   (declare (type list binding-values))
