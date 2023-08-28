@@ -30,6 +30,22 @@ br.break {
   margin-bottom: 2%;
 }
 
+#welcome-blurb {
+  animation: fadeIn 1.2s forwards;
+  -webkit-animation: fadeIn 1.2s forwards;
+  transform: translateX(10%);
+  -webkit-transform: translateX(10%);
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  100% { transform: translateX(0%); opacity: 1.0; }
+}
+
+@-webkit-keyframes fadeIn {
+  100% { transform: translateX(0%); opacity: 1.0; }
+}
+
 .tab-content pre {
   max-height:90vh;
 }

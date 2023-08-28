@@ -12,7 +12,10 @@ knowledgebase.org
 letsencrypt-usage.org
 lib/
 lib64
+LICENSE
 meta.org
+node_modules
+package-lock.json
 pending.org
 portfolio-webpage-untracked
 __pycache__
@@ -31,4 +34,3 @@ todo.org
 vultr*
 WIP.org
 *.zip
-LICENSE

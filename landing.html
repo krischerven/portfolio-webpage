@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.min.css') }}"/>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/prism.css') }}"/>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}">
+  <script src="{{ url_for('static', filename='javascript/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='javascript/dayjs.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='javascript/prism.js') }}"></script>
+  <script src="{{ url_for('static', filename='javascript/prism-customization.js') }}"></script>
 </head>
 
 <!-- See: https://prismjs.com/plugins/line-numbers/#how-to-use -->
@@ -108,7 +112,9 @@
       <div class="tab-content" id="welcome-tab-content">
         <div class="tab-pane fade show active" id="welcome-code-1" role="tabpanel"
              aria-labelledby="welcome-tab-1">
-          <h1 class="display-2">Welcome</h1>
+          <h1 class="display-2" id="welcome-blurb" class="slide-in"></h1>
+          <!-- Ready to load JS immediately after welcome-blurb -->
+          <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
           <p style="font-size: 2em;">You can find several samples of my work here.
             All of the projects listed here are available on both
             <a href="https://github.com/krischerven">Github</a> and
@@ -182,11 +188,5 @@
     </div>
   </div>
 </div>
-
-<script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
-<script src="{{ url_for('static', filename='javascript/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ url_for('static', filename='javascript/prism.js') }}"></script>
-<script src="{{ url_for('static', filename='javascript/prism-customization.js') }}"></script>
-
 </body>
 </html>

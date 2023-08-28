@@ -1,2 +1,3 @@
 #!/bin/bash
+(cd static/javascript && ../../node_modules/mocha/bin/_mocha -r ts-node/register main.ts)
 npx tsc -p ./static/javascript/tsconfig.json # --showConfig

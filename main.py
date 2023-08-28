@@ -81,6 +81,8 @@ def server_work():
                      "in the system path.")
         os.remove(".server-work.lock")
         exit(1)
+    logger.debug("Running npm install...")
+    os.system("sudo npm install")
     if os.system("which tsc > /dev/null 2>&1") == 256:
         logger.debug("tsc does not exist in the system path; installing it globally...")
         os.system("sudo npm install -g typescript")
