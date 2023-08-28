@@ -1,12 +1,12 @@
 #+title: SSL Validation
 
 #+BEGIN_SRC bash
-cd /home/dev/resume-webpage
+cd /home/dev/portfolio-webpage
 mv static .well-known
 mkdir .well-known/pki-validation
 (copy the .txt file in SSL/ to .well-known/pki-validation)
 # set '.well-known' as the static dir in main.py
-systemctl restart resume-webpage
+systemctl restart portfolio-webpage
 mv .well-known static
 rm -rf static/pki-validation
 # set 'static' as the static dir in main.py

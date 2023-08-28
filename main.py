@@ -19,7 +19,7 @@ app = flask.Flask(__name__, template_folder=os.getcwd(), static_folder="static")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 logging.basicConfig()
-logger = logging.getLogger("resume-webpage")
+logger = logging.getLogger("portfolio-webpage")
 logger.setLevel(logging.DEBUG)
 
 

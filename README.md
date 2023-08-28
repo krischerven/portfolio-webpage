@@ -17,7 +17,7 @@ To run remotely:
 ```bash
 # install nginx
 ./create-nginx-symlinks
-sudo ln -s "$PWD"/resume-webpage.service /etc/systemd/system
+sudo ln -s "$PWD"/portfolio-webpage.service /etc/systemd/system
 ./create-download-hardlinks
-sudo systemctl start resume-webpage
+sudo systemctl start portfolio-webpage
 ```

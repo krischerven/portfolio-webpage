@@ -1,12 +1,12 @@
 #!/bin/bash
-if [ "$(basename "$PWD")" != "resume-webpage" ]; then
-   echo "Wrong directory; Please cd to your nearest resume-webpage."
+if [ "$(basename "$PWD")" != "portfolio-webpage" ]; then
+   echo "Wrong directory; Please cd to your nearest portfolio-webpage."
    exit 0
 fi
 git fetch
 git reset --hard origin/master
 echo "Running 'sudo systemctl daemon-reload'. You may be asked for your password."
 sudo systemctl daemon-reload
-echo "Running 'sudo systemctl restart resume-webpage'"
-sudo systemctl restart resume-webpage
+echo "Running 'sudo systemctl restart portfolio-webpage'"
+sudo systemctl restart portfolio-webpage
 echo "All done."
