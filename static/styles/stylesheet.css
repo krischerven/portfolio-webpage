@@ -51,6 +51,12 @@ div.side-navbar {
   flex: 0 0 100%;
 }
 
+div.col.codearea {
+  border-top: 1px solid #E5E5E5;
+  padding-top: 0.5em;
+  margin-top: 0.3em;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   div.codearea pre code {
@@ -73,6 +79,11 @@ div.side-navbar {
   div.side-navbar {
     -ms-flex: 0 0 12%;
     flex: 0 0 12%;
+  }
+  div.col.codearea {
+    border-top: none;
+    padding-top: 0em;
+    margin-top: 0em;
   }
 }
 
