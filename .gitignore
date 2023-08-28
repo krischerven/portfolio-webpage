@@ -2,6 +2,7 @@ bin/
 credentials.org
 debugging.org
 debug.org
+easy-todo.org
 # FIXME
 formatter
 ideas.org
@@ -12,10 +13,12 @@ letsencrypt-usage.org
 lib/
 lib64
 meta.org
+pending.org
 portfolio-webpage-untracked
 __pycache__
 pyvenv.cfg
 screenfly.org
+snippets-todo.org
 SSL/
 static/downloads/*
 static/javascript/main.js
