@@ -12,9 +12,9 @@ letsencrypt-usage.org
 lib/
 lib64
 meta.org
+portfolio-webpage-untracked
 __pycache__
 pyvenv.cfg
-portfolio-webpage-untracked
 screenfly.org
 SSL/
 static/downloads/*
