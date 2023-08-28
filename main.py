@@ -23,15 +23,30 @@ logger = logging.getLogger("resume-webpage")
 logger.setLevel(logging.DEBUG)
 
 
+def static_file(dir):
+    "Return [static]/[dir], where [static] is Flask's static folder."
+    return app.static_folder.split("/")[-1] + "/" + dir
+
+
+def download(dir):
+    "Return [static]/downloads/[dir], where [static] is Flask's static folder."
+    return app.static_folder.split("/")[-1] + "/downloads/" + dir
+
+
+def read_file(file):
+    "Shorthand for open([file], 'r').read()"
+    return open(file).read()
+
+
 @app.route('/')
 def landing():
     "Render landing.html"
-    lev_snippet = open("snippets/lev.lisp", "r", encoding="UTF-8").read()
-    lev_deps_snippet = open("snippets/lev-dependencies.lisp", "r", encoding="UTF-8").read()
-    serve_snippet = open(__file__, "r", encoding="UTF-8").read()
-    landing_snippet = open("landing.html", "r", encoding="UTF-8").read()
-    maints_snippet = open("static/javascript/main.ts", "r", encoding="UTF-8").read()
-    stylesheet_snippet = open("stylesheet.css", "r", encoding="UTF-8").read()
+    lev_snippet = read_file("snippets/lev.lisp")
+    lev_deps_snippet = read_file("snippets/lev-dependencies.lisp")
+    serve_snippet = read_file(__file__)
+    landing_snippet = read_file("landing.html")
+    maints_snippet = read_file(static_file("javascript/main.ts"))
+    stylesheet_snippet = read_file("stylesheet.css")
     return flask.render_template("landing.html",
                                  metaprog_snippet_1=lev_snippet,
                                  metaprog_snippet_2=lev_deps_snippet,
@@ -39,16 +54,16 @@ def landing():
                                  website_snippet_2=landing_snippet,
                                  website_snippet_3=maints_snippet,
                                  website_snippet_4=stylesheet_snippet,
-                                 metaprog_download_1="static/downloads/lev.lisp",
-                                 metaprog_download_2="static/downloads/lev-dependencies.lisp",
-                                 website_download_1="static/downloads/main.py",
-                                 website_download_2="static/downloads/landing.html",
-                                 website_download_3="static/downloads/main.ts",
-                                 website_download_4="static/downloads/stylesheet.css")
+                                 metaprog_download_1=download("lev.lisp"),
+                                 metaprog_download_2=download("lev-dependencies.lisp"),
+                                 website_download_1=download("main.py"),
+                                 website_download_2=download("landing.html"),
+                                 website_download_3=download("main.ts"),
+                                 website_download_4=download("stylesheet.css"))
 
 
 def server_work():
-    "Run important server work before anything goes live"
+    "Runs important server work before anything goes live."
     if os.path.exists(".server-work.lock"):
         logger.debug(".server-work.lock exists; skipping running server_work()")
         return
