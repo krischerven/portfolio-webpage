@@ -3,7 +3,7 @@
 ;; ----------------------------------------------------------------------------------------------------
 ;;
 ;; lev (let-value) is a macro for introducing immutable bindings.
-;; It is syntactically identical to (let).
+;; It is syntactically identical to let [http://clhs.lisp.se/Body/s_let_l.htm]
 ;;
 ;; Compare:
 ;;
