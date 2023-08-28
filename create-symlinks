@@ -4,6 +4,9 @@ sudo rm /etc/nginx/sites-available/portfolio-webpage > /dev/null 2>&1
 sudo rm /etc/nginx/sites-enabled/portfolio-webpage > /dev/null 2>&1
 sudo ln -s "$PWD"/nginx /etc/nginx/sites-available/portfolio-webpage
 sudo ln -s "$PWD"/nginx /etc/nginx/sites-enabled/portfolio-webpage
+echo "Symlinking portfolio-webpage.service to /etc/systemd/system"
+sudo rm /etc/systemd/system/portfolio-webpage.service > /dev/null 2>&1
+sudo ln -s "$PWD"/portfolio-webpage.service /etc/systemd/system
 echo "Running 'systemctl restart nginx'..."
 sudo systemctl restart nginx
 echo "All done."

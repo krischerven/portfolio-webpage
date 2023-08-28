@@ -1,5 +1,3 @@
-# Run ./create-nginx-symlinks
-
 # krischerven.info (no SSL)
 server {
 
