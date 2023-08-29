@@ -15,15 +15,15 @@ function set_code_tab(name: String) {
   document.getElementById(`${name}-tab-content`)!!.style.display = ""
 }
 
-const dayjs = () => {
+const Dayjs = () => {
   function hour(): number {
-    return eval("dayjs()").hour
+    return eval("dayjs().hour()")
   }
   return {hour: hour}
 }
 
 function get_welcome_blurb(hour_?: number) : string {
-  const hour : number = hour_ ?? dayjs().hour()
+  const hour : number = hour_ ?? Dayjs().hour()
   if (hour > 2 && hour < 12)
     return "Good morning."
   else if (hour >= 12 && hour < 18)
