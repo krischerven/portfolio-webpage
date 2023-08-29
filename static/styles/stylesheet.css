@@ -81,6 +81,9 @@ div.col.codearea {
   div.codearea pre code {
     font-size: 10px;
   }
+  div.codearea pre code.code-wide {
+    font-size: 8px;
+  }
   div.side-navbar {
     font-size: 1em;
   }
@@ -93,23 +96,64 @@ div.col.codearea {
   }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  div.side-navbar {
-    -ms-flex: 0 0 12%;
-    flex: 0 0 12%;
+/* Intermediate stages for longer code snippets */
+@media (min-width: 827px) {
+  div.codearea pre code.code-wide {
+    font-size: 9px;
   }
+}
+
+@media (min-width: 895px) {
+  div.codearea pre code.code-wide {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 962px) {
+  div.codearea pre code.code-wide {
+    font-size: 11px;
+  }
+}
+
+/* Large devices (desktops, 992px and up)
+This should affect nearly zero laptops/desktops, so keep the mobile layout for
+the benefit of displaying [div.codearea pre code.code-wide] at a higher
+resolution (otherwise, it would have to be 8px, a huge downgrade from 11px)
+*/
+
+@media (min-width: 992px) {
+  div.codearea pre code {
+    font-size: 13px;
+  }
+}
+
+/* Disabled: Avoid off-screen till ~1304px
+@media (min-width: 1033px) {
+  div.codearea pre code.code-wide {
+    font-size: 12px;
+  }
+} */
+
+/* Disabled: Avoid off-screen till ~1372px
+@media (min-width: 1100px) {
+  div.codearea pre code.code-wide {
+    font-size: 13px;
+  }
+} */
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
   div.col.codearea {
     border-top: none;
     padding-top: 0em;
     margin-top: 0em;
   }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+  div.side-navbar {
+    -ms-flex: 0 0 12%;
+    flex: 0 0 12%;
+  }
   div.codearea pre code {
-    font-size: 15px;
+    font-size: 14px;
   }
   div.side-navbar {
     font-size: 1.2em;
@@ -117,4 +161,5 @@ div.col.codearea {
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
+/* Currently there is no special logic for these devices. */
 @media (min-width: 1400px) {}

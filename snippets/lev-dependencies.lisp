@@ -61,7 +61,8 @@ arguments."
   (fmakunbound 'copy-elist)
   (defun copy-elist (elist)
     (declare (type elist elist))
-    (make-elist :sequence (copy-array (elist-sequence elist)) :typef (elist-typef elist))))
+    (make-elist :sequence (copy-array (elist-sequence elist))
+                :typef (elist-typef elist))))
 
 (defun extend (elist element)
   (declare (type elist elist))
