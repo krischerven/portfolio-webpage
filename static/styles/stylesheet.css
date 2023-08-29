@@ -57,6 +57,12 @@ div.codearea pre code {
   font-size: 8px;
 }
 
+/* Prism override to fix line numbers */
+.line-numbers .line-numbers-rows {
+  font-size: 16px !important;
+  top: -0.19em !important;
+}
+
 div.side-navbar {
   font-size: 0.7em;
   -ms-flex: 0 0 100%;
