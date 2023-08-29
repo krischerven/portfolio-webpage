@@ -25,6 +25,7 @@ snippets-todo.org
 SSL/
 static/downloads/*
 static/javascript/main.js
+static/javascript/debug.js
 # symlinked to lib
 temp
 third-party-notes.org

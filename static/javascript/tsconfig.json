@@ -11,6 +11,7 @@
     "noEmitOnError": true
   },
   "files": [
-    "./main.ts"
+    "./main.ts",
+    "./debug.ts"
   ]
 }

@@ -1,3 +1,5 @@
 #!/bin/bash
+# Run tests in main.ts
 (cd static/javascript && ../../node_modules/mocha/bin/_mocha -r ts-node/register main.ts)
+# Generate javascript files (if no compile errors)
 npx tsc -p ./static/javascript/tsconfig.json # --showConfig
