@@ -11,7 +11,7 @@ function set_code_tab(name: String) {
   }
   const x = document.getElementById(`${name}-tab`)
   if (x != null)
-      x.style.display = ""
+    x.style.display = ""
   document.getElementById(`${name}-tab-content`)!!.style.display = ""
 }
 
@@ -19,11 +19,11 @@ const Dayjs = () => {
   function hour(): number {
     return eval("dayjs().hour()")
   }
-  return {hour: hour}
+  return { hour: hour }
 }
 
-function get_welcome_blurb(hour_?: number) : string {
-  const hour : number = hour_ ?? Dayjs().hour()
+function get_welcome_blurb(hour_?: number): string {
+  const hour: number = hour_ ?? Dayjs().hour()
   if (hour > 2 && hour < 12)
     return "Good morning."
   else if (hour >= 12 && hour < 18)
@@ -37,10 +37,10 @@ function set_welcome_blurb() {
 }
 
 if (typeof document === 'undefined')
-  describe('main.ts', function() {
+  describe('main.ts', function () {
     const chai = require('chai')
-    it('test_welcome_blurb', function() {
-      function log2(i: number, x: string) : number {
+    it('test_welcome_blurb', function () {
+      function log2(i: number, x: string): number {
         //console.log(i, "(" + x + ")")
         return i
       }
