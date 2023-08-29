@@ -1,6 +1,7 @@
-/* # ################################################### #
-   # main.ts: Typescript functionality for landing.html. #
-   # ################################################### # */
+/* # ################################################## #
+   # main.ts: Typescript functionality for landing.html #
+   # https://git.krischerven.info/dev/portfolio-webpage #
+   # ################################################## # */
 
 function set_code_tab(name: String) {
   for (const lang of ["welcome", "metaprog", "website"]) {
