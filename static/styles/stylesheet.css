@@ -26,10 +26,6 @@
   font-style: italic;
 }
 
-br.break {
-  margin-bottom: 2%;
-}
-
 #welcome-blurb {
   animation: fadeIn 1.2s forwards;
   -webkit-animation: fadeIn 1.2s forwards;
