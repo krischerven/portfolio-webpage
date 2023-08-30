@@ -8,7 +8,8 @@
     "module": "commonjs",
     "strictNullChecks": true,
     "alwaysStrict": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "removeComments": true
   },
   "files": [
     "./main.ts",

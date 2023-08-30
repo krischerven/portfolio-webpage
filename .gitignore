@@ -23,8 +23,6 @@ screenfly.org
 snippets-todo.org
 SSL/
 static/downloads/*
-static/javascript/debug.js
-static/javascript/main.js
 # symlinked to lib
 temp
 third-party-notes.org
