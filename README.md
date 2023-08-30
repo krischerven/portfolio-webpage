@@ -16,6 +16,7 @@ python main.py # Windows
 To run remotely:
 ```bash
 # install nginx
+# set up a remote git repo
 ./create-symlinks
-sudo systemctl start portfolio-webpage
+./update-webpage
 ```
