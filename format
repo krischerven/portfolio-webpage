@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "Running autopep8..."
+autopep8 --in-place --max-line-length 90 ./*.py
+echo "Running isort..."
+isort ./*.py
+echo "Running interrogate *.py"
+interrogate ./*.py

@@ -4,7 +4,6 @@ debugging.org
 debug.org
 easy-todo.org
 # FIXME
-formatter
 ideas.org
 include/
 # incomplete
@@ -24,12 +23,13 @@ screenfly.org
 snippets-todo.org
 SSL/
 static/downloads/*
-static/javascript/main.js
 static/javascript/debug.js
+static/javascript/main.js
 # symlinked to lib
 temp
 third-party-notes.org
 tmp
+todo-correctness.org
 todo-later.org
 todo.org
 vultr*
