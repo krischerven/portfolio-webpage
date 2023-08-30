@@ -16,6 +16,8 @@ import sys
 
 import flask
 
+from work import server_work
+
 app = flask.Flask(__name__, template_folder=os.getcwd(), static_folder="static")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
@@ -63,40 +65,6 @@ def landing():
                                  website_download_4=download("stylesheet.css"))
 
 
-def server_work():
-    "Runs important server work before anything goes live."
-    if os.path.exists(".server-work.lock"):
-        logger.debug(".server-work.lock exists; skipping running server_work()")
-        return
-    # NOTE: 0644 is default
-    open(".server-work.lock", "w")
-    # This is 1) fast 2) never errors, so put it first
-    logger.debug("Running ./create-download-hardlinks")
-    os.system("./create-download-hardlinks")
-    #
-    logger.debug("Running git pull...")
-    os.system("git pull")
-    if os.system("which npx > /dev/null 2>&1") == 256:
-        logger.debug("npx (npm) does not exist in the system path, so ./tscompile is "
-                     "unrunnable. Aborting. Please install npm or make npx available "
-                     "in the system path.")
-        os.remove(".server-work.lock")
-        exit(1)
-    logger.debug("Running npm install...")
-    os.system("sudo npm install")
-    if os.system("which tsc > /dev/null 2>&1") == 256:
-        logger.debug("tsc does not exist in the system path; installing it globally...")
-        os.system("sudo npm install -g typescript")
-    logger.debug("Running ./tscompile...")
-    if os.system("./tscompile") == 256:
-        logger.debug("./tscompile failed to run, aborting.")
-        os.remove(".server-work.lock")
-        exit(1)
-    logger.debug("All done.")
-    if os.path.exists(".server-work.lock"):
-        os.remove(".server-work.lock")
-
-
 def main():
     "Main function"
     logger.debug("Serving landing.html")
@@ -105,7 +73,14 @@ def main():
     logger.debug("Program exited (0)")
 
 
-# server_work() must run when app is imported by another program
-server_work()
 if __name__ == "__main__":
+    # server_work() should only run be run here for local testing (ie ./main.py), because
+    # some of the processes in server_work() require sudo. There is no guarantee that
+    # NOPASSWD will be set for all of these, which can cause server_work() to hang if it
+    # is run in the background via gunicorn. gunicorn also has a tendency to execute this
+    # file three times (<2023-08-30 Wed> - test via print outside this scope), which is
+    # problematic if we run server_work() here.
+    #
+    # For gunicorn, server_work() runs as part of the update-webpage bash script.
+    server_work()
     main()

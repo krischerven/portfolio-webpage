@@ -5,6 +5,7 @@ if [ "$(basename "$PWD")" != "portfolio-webpage" ]; then
 fi
 git fetch
 git reset --hard origin/master
+/usr/bin/env python3 work.py
 echo "Running 'sudo systemctl daemon-reload'. You may be asked for your password."
 sudo systemctl daemon-reload
 echo "Running 'sudo systemctl restart portfolio-webpage'"
