@@ -1,5 +1,7 @@
 bin/
+correctness-todo.org
 credentials.org
+current-project-notes.org
 debugging.org
 debug.org
 easy-todo.org
@@ -21,16 +23,15 @@ __pycache__
 pyvenv.cfg
 screenfly.org
 snippets-todo.org
+# SSH keys
 SSL/
 static/downloads/*
 # symlinked to lib
 temp
 third-party-notes.org
 tmp
-todo-correctness.org
 todo-later.org
 todo.org
-# SSH keys
 vultr*
 WIP.org
 *.zip
