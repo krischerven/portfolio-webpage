@@ -19,7 +19,7 @@ function set_code_tab(name: String) {
 const Dayjs = () => {
   function hour(): number {
     const hour = eval("dayjs().hour()")
-    console.assert(typeof(hour) === 'number', "dayjs().hour() did not return a number")
+    console.assert(typeof (hour) === 'number', "dayjs().hour() did not return a number")
     return hour
   }
   return { hour: hour }
