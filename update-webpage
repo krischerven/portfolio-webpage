@@ -1,13 +1,35 @@
-#!/bin/bash
-if [ "$(basename "$PWD")" != "portfolio-webpage" ]; then
-   echo "Wrong directory; Please cd to your nearest portfolio-webpage."
-   exit 0
-fi
-git fetch
-git reset --hard origin/master
-/usr/bin/env python3 work.py
-echo "Running 'sudo systemctl daemon-reload'. You may be asked for your password."
-sudo systemctl daemon-reload
-echo "Running 'sudo systemctl restart portfolio-webpage'"
-sudo systemctl restart portfolio-webpage
-echo "All done."
+#!/usr/bin/env python3
+import hashlib
+import os
+
+if os.path.basename(os.getcwd()) != "portfolio-webpage":
+    print("Wrong directory; Please cd to your nearest portfolio-webpage.")
+    exit(1)
+
+
+def md5(file):
+    return hashlib.md5(open(file).read().encode()).hexdigest()
+
+
+hash1 = md5("main.py")
+hash2 = md5("nginx")
+
+os.system("git fetch")
+os.system("git reset --hard origin/master")
+os.system("/usr/bin/env python3 work.py")
+
+print("Running 'sudo systemctl daemon-reload'. You may be asked for your password.")
+os.system("sudo systemctl daemon-reload")
+
+hash3 = md5("main.py")
+hash4 = md5("nginx")
+
+if hash1 != hash3:
+    print("main.py has changed; Running 'sudo systemctl restart portfolio-webpage'")
+    os.system("sudo systemctl restart portfolio-webpage")
+
+if hash2 != hash4:
+    print("./nginx has changed; Running 'systemctl restart nginx'...")
+    os.system("sudo systemctl restart nginx")
+
+print("All done.")
