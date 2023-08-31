@@ -5,10 +5,9 @@ current-project-notes.org
 debugging.org
 debug.org
 easy-todo.org
-# FIXME
+http-redirect-working.org
 ideas.org
 include/
-# incomplete
 knowledgebase.org
 letsencrypt-usage.org
 lib/
@@ -21,12 +20,10 @@ pending.org
 portfolio-webpage-untracked
 __pycache__
 pyvenv.cfg
-screenfly.org
+screenfly-checklist.org
 snippets-todo.org
-# SSH keys
 SSL/
 static/downloads/*
-# symlinked to lib
 temp
 third-party-notes.org
 tmp
