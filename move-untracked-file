@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ "$1" == "" ]; then
+    echo "Error: missing first file name."
+    exit 1
+fi
+if ! [ -f "portfolio-webpage-untracked/$1" ]; then
+    echo "Error: first file does not exist."
+    exit 1
+fi
+if [ "$2" == "" ]; then
+    echo "Error: missing second file name."
+    exit 1
+fi
+
+mv portfolio-webpage-untracked/"$1" portfolio-webpage-untracked/"$2"
+if [ -f "$1" ]; then
+    rm "$1"
+fi
+
+ln "$PWD"/portfolio-webpage-untracked/"$2" "$PWD"
+echo "$2" >> .gitignore
+GITIGNORE_OUT="$(sort .gitignore | grep -v "$1")"
+echo "$GITIGNORE_OUT" > .gitignore
