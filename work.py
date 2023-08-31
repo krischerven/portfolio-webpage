@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-from config import REMOTE_TSCOMPILE
 import logging
 import os
+
+from config import REMOTE_TSCOMPILE
 
 logging.basicConfig()
 logger = logging.getLogger("portfolio-webpage")
