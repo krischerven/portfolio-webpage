@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# ################################################## #
+######################################################
 # main.py: A simple Flask app to host the portfolio. #
 # https://git.krischerven.info/dev/portfolio-webpage #
 #                                                    #
@@ -8,7 +8,7 @@
 #   ./main.py                                        #
 #   ./main.py +debug                                 #
 #                                                    #
-# ################################################## #
+######################################################
 
 import logging
 import os
