@@ -30,6 +30,7 @@ if hash1 != hash3:
 
 if hash2 != hash4:
     print("./nginx has changed; Running 'systemctl restart nginx'...")
+    os.system("sudo systemctl reload nginx")
     os.system("sudo systemctl restart nginx")
 
 print("All done.")
