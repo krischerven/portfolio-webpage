@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Reloading nginx..."
+sudo systemctl reload nginx
+echo "Restarting nginx..."
+sudo systemctl restart nginx
+# No config files to reload in portfolio-webpage
+echo "Restarting portfolio-webpage-*..."
+sudo systemctl restart portfolio-webpage-1
+sudo systemctl restart portfolio-webpage-2
