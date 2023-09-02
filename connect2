@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh dev@45.32.5.171 -i vultr2
+ssh root@45.32.5.171 -i vultr2
