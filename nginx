@@ -2,6 +2,7 @@
 server {
 
   listen 443 ssl;
+  listen [2001:19f0:0005:4ebc:5400:04ff:fe8c:2a0a]:443 ssl;
     ssl_certificate /home/dev/portfolio-webpage/SSL/krischerven_info_chain.crt;
     ssl_certificate_key /home/dev/portfolio-webpage/SSL/krischerven_info.pem;
 
@@ -17,6 +18,7 @@ server {
 server {
 
   listen 80;
+  listen [2001:19f0:0005:4ebc:5400:04ff:fe8c:2a0a]:80;
   server_name krischerven.info www.krischerven.info;
 
   location / {
@@ -31,6 +33,7 @@ server {
 server {
 
   listen 443 ssl;
+  listen [2001:19f0:0005:4ebc:5400:04ff:fe8c:2a0a]:443 ssl;
     ssl_certificate /etc/letsencrypt/live/git.krischerven.info/fullchain.pem; # managed by Certbot
     ssl_certificate_key /etc/letsencrypt/live/git.krischerven.info/privkey.pem; # managed by Certbot
 
