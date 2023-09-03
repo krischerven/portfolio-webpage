@@ -25,8 +25,9 @@ hash3 = md5("main.py")
 hash4 = md5("nginx")
 
 if hash1 != hash3:
-    print("main.py has changed; Running 'sudo systemctl restart portfolio-webpage'")
-    os.system("sudo systemctl restart portfolio-webpage")
+    print("main.py has changed; Running 'sudo systemctl restart portfolio-webpage-*'")
+    os.system("sudo systemctl restart portfolio-webpage-1")
+    os.system("sudo systemctl restart portfolio-webpage-2")
 
 if hash2 != hash4:
     print("./nginx has changed; Running 'systemctl restart nginx'...")

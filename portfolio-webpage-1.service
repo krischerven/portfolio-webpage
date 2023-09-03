@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve portfolio-webpage
+After=network.target
+
+[Service]
+User=dev
+Group=www-data
+WorkingDirectory=/home/dev/portfolio-webpage
+Environment="PATH=/usr/bin:/usr/local/bin:/home/dev/portfolio-webpage/bin"
+ExecStart=/home/dev/portfolio-webpage/bin/gunicorn --workers 3 --bind unix:portfolio-webpage-1.sock -m 007 main:app
+
+[Install]
+WantedBy=multi-user.target
