@@ -9,7 +9,6 @@ http-redirect-working.org
 ideas.org
 include/
 knowledgebase.org
-letsencrypt-usage.org
 lib/
 lib64
 LICENSE
@@ -28,6 +27,7 @@ temp
 third-party-notes.org
 tmp
 todo-later.org
+todo-lp.org
 todo.org
 urls.org
 vultr*
