@@ -31,6 +31,19 @@ function get_welcome_blurb(hour_) {
 function set_welcome_blurb() {
     document.getElementById("welcome-blurb").innerHTML = get_welcome_blurb();
 }
+function ask_chatbot_question(question) {
+    const host = location.host.startsWith("localhost") ?
+        "http://localhost:3103" : "https://krischerven.info:3103";
+    fetch(host + "/question", {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({ question: question }),
+    })
+        .then((response) => response.json())
+        .then((json) => console.log(json))
+        .catch((error) => console.error(error));
+}
 if (typeof document === 'undefined')
     describe('main.ts', function () {
         const chai = require('chai');
