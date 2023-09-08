@@ -191,6 +191,52 @@
    * Snippet 2.1 *
    *************** */
 
+@media (min-width: 1288px) {
+  div.codearea pre code.code-chatbot-go {
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 1373px) {
+  div.codearea pre code.code-chatbot-go {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1458px) {
+  div.codearea pre code.code-chatbot-go {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 1546px) {
+  div.codearea pre code.code-chatbot-go {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1628px) {
+  div.codearea pre code.code-chatbot-go {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1716px) {
+  div.codearea pre code.code-chatbot-go {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1801px) {
+  div.codearea pre code.code-chatbot-go {
+    font-size: 15px;
+  }
+}
+
+/* ***************
+   * Snippet 3.1 *
+   *************** */
+
 @media (min-width: 827px) {
   div.codearea pre code.code-lev {
     font-size: 9px;
@@ -234,7 +280,7 @@
 }
 
 /* ***************
-   * Snippet 2.2 *
+   * Snippet 3.2 *
    *************** */
 
 @media (min-width: 641px) {

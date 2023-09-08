@@ -7,3 +7,4 @@ cp main.py static/downloads
 chmod -x static/downloads/main.py
 ln static/javascript/main.ts static/downloads
 ln static/styles/stylesheet.css static/downloads
+ln portfolio-chatbot/main.go static/downloads

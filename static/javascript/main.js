@@ -1,6 +1,6 @@
 "use strict";
 function set_code_tab(name) {
-    for (const lang of ["welcome", "metaprog", "website"]) {
+    for (const lang of ["welcome", "metaprog", "website", "chatbot"]) {
         const x = document.getElementById(`${lang}-tab`);
         if (x != null)
             x.style.display = "none";
@@ -33,15 +33,10 @@ function set_welcome_blurb() {
 }
 function ask_chatbot_question(question) {
     const host = location.host.startsWith("localhost") ?
-        "http://localhost:3103" : "https://krischerven.info:3103";
-    fetch(host + "/question", {
-        method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json; charset=UTF-8" },
-        body: JSON.stringify({ question: question }),
-    })
+        "http://localhost:5000" : "https://krischerven.info";
+    fetch(host + "/question/" + question)
         .then((response) => response.json())
-        .then((json) => console.log(json))
+        .then((json) => console.log(json.response))
         .catch((error) => console.error(error));
 }
 if (typeof document === 'undefined')

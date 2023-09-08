@@ -1,0 +1,8 @@
+[submodule "portfolio-webpage-untracked"]
+	path = portfolio-webpage-untracked
+	url = https://git.krischerven.info/dev/portfolio-webpage-untracked-files
+	branch = master
+[submodule "portfolio-chatbot"]
+	path = portfolio-chatbot
+	url = https://git.krischerven.info/dev/portfolio-chatbot
+	branch = master

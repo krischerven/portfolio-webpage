@@ -16,7 +16,6 @@ meta.org
 node_modules
 package-lock.json
 pending.org
-portfolio-webpage-untracked
 __pycache__
 pyvenv.cfg
 screenfly-checklist.org
