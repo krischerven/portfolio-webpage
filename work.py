@@ -23,6 +23,10 @@ def server_work(tscompile=True):
     #
     logger.debug("Running git pull...")
     os.system("git pull")
+    logger.debug("Running git submodule update --init --recursive")
+    os.system("git submodule update --init --recursive")
+    logger.debug("Running git submodule update --remote")
+    os.system("git submodule update --remote")
     if tscompile:
         if os.system("which npx > /dev/null 2>&1") == 256:
             logger.debug("npx (npm) does not exist in the system path, so ./tscompile is "
