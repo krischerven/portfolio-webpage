@@ -114,7 +114,9 @@ div.side-navbar {
 }
 
 #AI-assistant button {
-  height:27px;
+  height:38px;
+  font-size:0.9em;
+  margin-top:2px;
 }
 
 /* ********************************
