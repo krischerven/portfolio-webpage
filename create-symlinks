@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "Symlinking ./nginx to relevant directories..."
 sudo rm /etc/nginx/sites-available/portfolio-webpage > /dev/null 2>&1
 sudo rm /etc/nginx/sites-enabled/portfolio-webpage > /dev/null 2>&1

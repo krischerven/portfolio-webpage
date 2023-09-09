@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ssh root@45.32.5.171 -i vultr2

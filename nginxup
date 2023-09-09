@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "Reloading nginx..."
 sudo systemctl reload nginx
 echo "Restarting nginx..."
