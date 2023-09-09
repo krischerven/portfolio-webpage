@@ -10,6 +10,12 @@ logger = logging.getLogger("portfolio-webpage")
 logger.setLevel(logging.DEBUG)
 
 
+def announce_and_run(program):
+    "Announce that [program] is being run, then run [program]."
+    logger.debug(f"Running {program}...")
+    return os.system(program)
+
+
 def server_work(tscompile=True):
     "Runs important server work before the webpage goes live."
     if os.path.exists(".server-work.lock"):
@@ -18,15 +24,11 @@ def server_work(tscompile=True):
     # NOTE: 0644 is default
     open(".server-work.lock", "w")
     # This is 1) fast 2) never errors, so put it first
-    logger.debug("Running ./create-download-hardlinks")
-    os.system("./create-download-hardlinks")
+    announce_and_run("./create-download-hardlinks")
     #
-    logger.debug("Running git pull...")
-    os.system("git pull")
-    logger.debug("Running git submodule update --init --recursive")
-    os.system("git submodule update --init --recursive")
-    logger.debug("Running git submodule update --remote")
-    os.system("git submodule update --remote")
+    announce_and_run("git pull")
+    announce_and_run("git submodule update --init --recursive")
+    announce_and_run("git submodule update --remote")
     if tscompile:
         if os.system("which npx > /dev/null 2>&1") == 256:
             logger.debug("npx (npm) does not exist in the system path, so ./tscompile is "
@@ -34,14 +36,12 @@ def server_work(tscompile=True):
                          "in the system path.")
             os.remove(".server-work.lock")
             exit(1)
-        logger.debug("Running npm install...")
-        os.system("sudo npm install")
+        announce_and_run("sudo npm install")
         if os.system("which tsc > /dev/null 2>&1") == 256:
             logger.debug("tsc does not exist in the system path;"
                          "installing it globally...")
             os.system("sudo npm install -g typescript")
-        logger.debug("Running ./tscompile...")
-        if os.system("./tscompile") == 256:
+        if announce_and_run("./tscompile") == 256:
             logger.debug("./tscompile failed to run, aborting.")
             os.remove(".server-work.lock")
             exit(1)
