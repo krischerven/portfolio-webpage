@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+import hashlib
+import os
+import time
+from pathlib import Path
+
+
+def md5(file):
+    return hashlib.md5(open(file).read().encode()).hexdigest()
+
+
+file2md5sum = dict()
+
+
+def announce_and_tscompile(message):
+    print(f"tsdaemon: {message}; running tscompile")
+    os.system("./tscompile")
+
+
+def main():
+    for file in Path("static/javascript/").glob("*.ts"):
+        file = str(file)
+        file2md5sum[file] = md5(file)
+    announce_and_tscompile("Startup")
+    while True:
+        new_files = []
+        changed_files = []
+        for file in Path("static/javascript/").glob("*.ts"):
+            file = str(file)
+            md5sum = md5(file)
+            if file not in file2md5sum:
+                new_files.append(file)
+                file2md5sum[file] = md5sum
+            else:
+                if file2md5sum[file] != md5sum:
+                    file2md5sum[file] = md5sum
+                    changed_files.append(file)
+        if len(new_files) > 0:
+            announce_and_tscompile(f"Typescript file(s) {new_files} created")
+        if len(changed_files) > 0:
+            announce_and_tscompile(f"Typescript file(s) {changed_files} changed")
+        time.sleep(0.1)
+
+
+if __name__ == "__main__":
+    main()
