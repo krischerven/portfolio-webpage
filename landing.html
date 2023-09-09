@@ -40,6 +40,10 @@
       <a class="nav-link" target="_blank" rel="noopener noreferrer"
          href="{{ url_for('static', filename='misc/resume.pdf') }}">Resume</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" rel="noopener noreferrer"
+         href="#" onclick="toggle_AI_assistant_dialogue(); return false">AI Assistant</a>
+    </li>
   </ul>
 </nav>
 
@@ -205,6 +209,16 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="AI-assistant">
+    Ask me anything about Kris!
+    <br><br>
+    <div id="AI-message-area">
+    </div>
+    <br>
+    <textarea id="AI-message-input" cols="30" rows="2">
+    </textarea>
+    <button onclick="ask_chatbot_question()">Send</button>
   </div>
 </div>
 </body>

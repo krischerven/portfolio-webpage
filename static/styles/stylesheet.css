@@ -28,18 +28,18 @@
 }
 
 #welcome-blurb {
-  animation: fadeIn 1.2s forwards;
-  -webkit-animation: fadeIn 1.2s forwards;
+  animation: slideIn 1.2s forwards;
+  -webkit-animation: slideIn 1.2s forwards;
   transform: translateX(10%);
   -webkit-transform: translateX(10%);
   opacity: 0;
 }
 
-@keyframes fadeIn {
+@keyframes slideIn {
   100% { transform: translateX(0%); opacity: 1.0; }
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes slideIn {
   100% { transform: translateX(0%); opacity: 1.0; }
 }
 
@@ -70,6 +70,46 @@ div.side-navbar {
   font-size: 0.7em;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
+}
+
+#AI-assistant {
+  opacity: 0;
+  display: none;
+  animation: fadeIn 0.3s forwards;
+  -webkit-animation: fadeIn 0.3s forwards;
+  position: absolute;
+  background-color: #d7d7d7;
+  border-style: outset;
+  padding: 15px;
+  width: 400px;
+  left: 700px;
+  top: 100px;
+}
+
+@keyframes fadeIn {
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes fadeIn {
+  100% { opacity: 1.0; }
+}
+
+#AI-assistant.fade-out {
+  opacity: 1.0;
+  animation: fadeOut 0.3s forwards;
+  -webkit-animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeOut {
+  100% { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOut {
+  100% { opacity: 0; }
+}
+
+#AI-assistant button {
+  height:27px;
 }
 
 /* ********************************

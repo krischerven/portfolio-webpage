@@ -37,14 +37,48 @@ function get_welcome_blurb(hour_?: number): string {
 
 function set_welcome_blurb() {
   document.getElementById("welcome-blurb")!!.innerHTML = get_welcome_blurb()
+
 }
 
-function ask_chatbot_question(question: string) {
+function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function toggle_AI_assistant_dialogue() {
+  const element = document.getElementById("AI-assistant")!!
+  if (getComputedStyle(element).display === "none") {
+    element.classList.remove("fade-out")
+    element.style.display = "block"
+  } else {
+    element.classList.add("fade-out")
+    await sleep(300)
+    element.style.display = "none"
+  }
+}
+
+function ask_chatbot_question_interactively(question: string) {
   const host = location.host.startsWith("localhost") ?
     "http://localhost:5000" : "https://krischerven.info"
   fetch(host + "/question/" + question)
     .then((response) => response.json())
     .then((json) => console.log(json.response))
+    .catch((error) => console.error(error))
+}
+
+function ask_chatbot_question() {
+  const host = location.host.startsWith("localhost") ?
+    "http://localhost:5000" : "https://krischerven.info"
+  const input = document.getElementById("AI-message-input") as HTMLInputElement
+  const value = input.value
+  input.value = ""
+  fetch(host + "/question/" + value)
+    .then((response) => response.json())
+    .then((json) => {
+      const span = document.createElement("span")
+      span.innerText = json.response
+      document.getElementById("AI-message-area")!!.appendChild(span)
+      console.log(json.response)
+    })
     .catch((error) => console.error(error))
 }
 
