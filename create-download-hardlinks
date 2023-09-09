@@ -3,8 +3,9 @@ mkdir -p static/downloads
 rm static/downloads/* > /dev/null 2>&1
 ln landing.html static/downloads
 ln snippets/* static/downloads
-cp main.py static/downloads
-chmod -x static/downloads/main.py
 ln static/javascript/main.ts static/downloads
 ln static/styles/stylesheet.css static/downloads
 ln portfolio-chatbot/main.go static/downloads
+# main.py can't be a symlink; it has an executable bit, which would be poor UX
+cp main.py static/downloads
+chmod -x static/downloads/main.py
