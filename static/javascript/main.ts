@@ -41,7 +41,7 @@ function set_welcome_blurb() {
 }
 
 function sleep(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function toggle_AI_assistant_dialogue() {
@@ -68,16 +68,24 @@ function ask_chatbot_question_interactively(question: string) {
 function ask_chatbot_question() {
   const host = location.host.startsWith("localhost") ?
     "http://localhost:5000" : "https://krischerven.info"
+  const messageArea = document.getElementById("AI-message-area")!!
   const input = document.getElementById("AI-message-input") as HTMLInputElement
   const value = input.value
+  {
+    const span = document.createElement("span")
+    span.innerText = "Q: " + value
+    messageArea.appendChild(span)
+    messageArea.appendChild(document.createElement("br"))
+  }
   input.value = ""
   fetch(host + "/question/" + value)
     .then((response) => response.json())
     .then((json) => {
       const span = document.createElement("span")
-      span.innerText = json.response
-      document.getElementById("AI-message-area")!!.appendChild(span)
-      console.log(json.response)
+      span.innerText = "A: " + json.response
+      messageArea.appendChild(span)
+      messageArea.appendChild(document.createElement("br"))
+      console.log("CHATBOT: " + json.response)
     })
     .catch((error) => console.error(error))
 }

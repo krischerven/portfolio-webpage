@@ -57,16 +57,24 @@ function ask_chatbot_question_interactively(question) {
 function ask_chatbot_question() {
     const host = location.host.startsWith("localhost") ?
         "http://localhost:5000" : "https://krischerven.info";
+    const messageArea = document.getElementById("AI-message-area");
     const input = document.getElementById("AI-message-input");
     const value = input.value;
+    {
+        const span = document.createElement("span");
+        span.innerText = "Q: " + value;
+        messageArea.appendChild(span);
+        messageArea.appendChild(document.createElement("br"));
+    }
     input.value = "";
     fetch(host + "/question/" + value)
         .then((response) => response.json())
         .then((json) => {
         const span = document.createElement("span");
-        span.innerText = json.response;
-        document.getElementById("AI-message-area").appendChild(span);
-        console.log(json.response);
+        span.innerText = "A: " + json.response;
+        messageArea.appendChild(span);
+        messageArea.appendChild(document.createElement("br"));
+        console.log("CHATBOT: " + json.response);
     })
         .catch((error) => console.error(error));
 }
