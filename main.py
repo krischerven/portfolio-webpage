@@ -4,9 +4,9 @@
 # main.py: A simple Flask app to host the portfolio. #
 # https://git.krischerven.info/dev/portfolio-webpage #
 #                                                    #
-# Usage:                                             #
+# Usage (brackets represent optional arguments):     #
 #   ./main.py                                        #
-#   ./main.py +debug                                 #
+#   ./main.py [+debug] [+skip-npm]                   #
 #                                                    #
 ######################################################
 
@@ -77,7 +77,7 @@ def question(question):
 def main():
     "Main function"
     logger.debug("Serving landing.html")
-    debug_mode = len(sys.argv) > 1 and sys.argv[1] == "+debug"
+    debug_mode = "+debug" in sys.argv
     app.run("0.0.0.0", debug=debug_mode)
     logger.debug("Program exited (0)")
 
@@ -91,5 +91,5 @@ if __name__ == "__main__":
     # problematic if we run server_work() here.
     #
     # For gunicorn, server_work() runs as part of the update-webpage bash script.
-    server_work()
+    server_work(tscompile_npm_work=("+skip-npm" not in sys.argv))
     main()

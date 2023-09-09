@@ -16,7 +16,7 @@ def announce_and_run(program):
     return os.system(program)
 
 
-def server_work(tscompile=True):
+def server_work(tscompile=True, tscompile_npm_work=True):
     "Runs important server work before the webpage goes live."
     if os.path.exists(".server-work.lock"):
         logger.debug(".server-work.lock exists; skipping running server_work()")
@@ -36,11 +36,12 @@ def server_work(tscompile=True):
                          "in the system path.")
             os.remove(".server-work.lock")
             exit(1)
-        announce_and_run("sudo npm install")
-        if os.system("which tsc > /dev/null 2>&1") == 256:
-            logger.debug("tsc does not exist in the system path;"
-                         "installing it globally...")
-            os.system("sudo npm install -g typescript")
+        if tscompile_npm_work:
+            announce_and_run("sudo npm install")
+            if os.system("which tsc > /dev/null 2>&1") == 256:
+                logger.debug("tsc does not exist in the system path;"
+                             "installing it globally...")
+                os.system("sudo npm install -g typescript")
         if announce_and_run("./tscompile") == 256:
             logger.debug("./tscompile failed to run, aborting.")
             os.remove(".server-work.lock")
