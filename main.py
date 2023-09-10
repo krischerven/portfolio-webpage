@@ -70,6 +70,7 @@ def landing():
 
 @app.route("/question/<question>")
 def question(question):
+    "Answer a question by invoking portfolio-chatbot --question \"${question}\""
     cmd = f"cd portfolio-chatbot && ./portfolio-chatbot --question \"{question}\""
     return {"response": os.popen(cmd).read()}
 
