@@ -68,26 +68,38 @@ function ask_chatbot_question_interactively(question: string) {
 function ask_chatbot_question() {
   const host = location.host.startsWith("localhost") ?
     "http://localhost:5000" : "https://krischerven.info"
-  const messageArea = document.getElementById("AI-message-area")!!
   const input = document.getElementById("AI-message-input") as HTMLInputElement
-  const value = input.value
-  {
-    const span = document.createElement("span")
-    span.innerText = "Q: " + value
-    messageArea.appendChild(span)
-    messageArea.appendChild(document.createElement("br"))
-  }
+  const question = input.value
   input.value = ""
-  fetch(host + "/question/" + value)
-    .then((response) => response.json())
-    .then((json) => {
-      const span = document.createElement("span")
-      span.innerText = "A: " + json.response
-      messageArea.appendChild(span)
-      messageArea.appendChild(document.createElement("br"))
-      console.log("CHATBOT: " + json.response)
-    })
-    .catch((error) => console.error(error))
+  // /question/ without an argument is 404
+  if (question === "") {
+    create_chatbot_question("")
+    create_chatbot_answer("Please ask me a question.", 2)
+  } else {
+    create_chatbot_question(question)
+    fetch(host + "/question/" + question)
+      .then((response) => response.json())
+      .then((json) => create_chatbot_answer(json.response))
+      .catch((error) => console.error(error))
+  }
+}
+
+function create_chatbot_question(question: string) {
+  const span = document.createElement("span")
+  span.innerText = "Q: " + question
+  const messageArea = document.getElementById("AI-message-area")!!
+  messageArea.appendChild(span)
+  messageArea.appendChild(document.createElement("br"))
+}
+
+function create_chatbot_answer(answer: string, br=1) {
+  const span = document.createElement("span")
+  span.innerText = "A: " + answer
+  const messageArea = document.getElementById("AI-message-area")!!
+  messageArea.appendChild(span)
+  for (let i = 0; i < br; i++)
+    messageArea.appendChild(document.createElement("br"))
+  console.log("CHATBOT: " + answer)
 }
 
 if (typeof document === 'undefined')
