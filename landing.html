@@ -16,6 +16,8 @@
   <script src="{{ url_for('static', filename='javascript/dayjs.min.js') }}"></script>
   <script src="{{ url_for('static', filename='javascript/prism.js') }}"></script>
   <script src="{{ url_for('static', filename='javascript/prism-customization.js') }}"></script>
+  <script src="{{ url_for('static', filename='javascript/fontawesome.js') }}"
+          crossorigin="anonymous"></script>
 </head>
 
 <!-- See: https://prismjs.com/plugins/line-numbers/#how-to-use -->
@@ -218,7 +220,7 @@
     <br>
     <textarea id="AI-message-input" cols="30" rows="2">
     </textarea>
-    <button type="button" class="btn btn-info btn-sm" id="AI-send-button" onclick="ask_chatbot_question()">Send</button>
+    <button type="button" class="btn btn-info btn-sm" id="AI-send-button" onclick="ask_chatbot_question()">Send <i class="fa-solid fa-paper-plane"/></i></button>
   </div>
 </div>
 </body>
