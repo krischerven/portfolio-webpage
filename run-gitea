@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "Restarting gitea.service..."
+sudo systemctl restart gitea
+echo "Restarting gitea-daemon.service..."
+sudo systemctl restart gitea-daemon
