@@ -4,11 +4,19 @@ sudo rm /etc/nginx/sites-available/portfolio-webpage > /dev/null 2>&1
 sudo rm /etc/nginx/sites-enabled/portfolio-webpage > /dev/null 2>&1
 sudo ln -s "$PWD"/nginx /etc/nginx/sites-available/portfolio-webpage
 sudo ln -s "$PWD"/nginx /etc/nginx/sites-enabled/portfolio-webpage
+
 echo "Symlinking portfolio-webpage-*.service to /etc/systemd/system"
 sudo rm /etc/systemd/system/portfolio-webpage-1.service > /dev/null 2>&1
 sudo rm /etc/systemd/system/portfolio-webpage-2.service > /dev/null 2>&1
 sudo ln -s "$PWD"/portfolio-webpage-1.service /etc/systemd/system
 sudo ln -s "$PWD"/portfolio-webpage-2.service /etc/systemd/system
+
+echo "Symlinking gitea.service, gitea-daemon.service to /etc/systemd/system"
+sudo rm /etc/systemd/system/gitea.service > /dev/null 2>&1
+sudo rm /etc/systemd/system/gitea-daemon.service > /dev/null 2>&1
+sudo ln -s "$PWD"/gitea.service /etc/systemd/system
+sudo ln -s "$PWD"/gitea-daemon.service /etc/systemd/system
+
 echo "Running 'systemctl restart nginx'..."
 sudo systemctl restart nginx
 echo "All done."
