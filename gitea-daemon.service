@@ -1,0 +1,11 @@
+[Unit]
+Description=Gitea master daemon
+After=network.target
+
+[Service]
+User=dev
+WorkingDirectory=/home/dev/portfolio-webpage
+ExecStart=/home/dev/portfolio-webpage/gitea-daemon
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+while true; do
+    sleep 15
+    if [ "$(systemctl is-active gitea)" == "inactive" ]; then
+        echo "gitea-daemon: gitea is dead (OOM?); restarting it"
+        sudo systemctl restart gitea
+    fi
+done
