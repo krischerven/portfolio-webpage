@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Contact</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/code.css') }}">
+  <script src="{{ url_for('static', filename='javascript/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='javascript/fontawesome.js') }}"
+          crossorigin="anonymous"></script>
+</head>
+
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="./" style="margin-left:1.7em">Kris Cherven</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer"
+         href="https://github.com/krischerven">GitHub</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer"
+         href="https://git.krischerven.info/explore/repos">Gitea</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer"
+         href="https://linkedin.com/in/kris-cherven">LinkedIn</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" target="_blank" rel="noopener noreferrer"
+         href="{{ url_for('static', filename='misc/resume.pdf') }}">Resume</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" rel="noopener noreferrer" href="./contact">Contact</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" rel="noopener noreferrer"
+         href="#" onclick="toggle_AI_assistant_dialogue(); return false">AI Assistant</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid" style="margin-top:4em;margin-left:4em;">
+  <h1 class="display-2" id="welcome-blurb">Get in touch!</h1>
+  <br>
+  <p style="font-size: 2em;">
+    Mobile: (248) 787 5715
+    <br>
+    Email: krischerven@gmail.com
+  </p>
+</div>
+
+</body>
+</html>

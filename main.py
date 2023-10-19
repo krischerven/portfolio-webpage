@@ -68,6 +68,12 @@ def landing():
                                  website_download_4=download("stylesheet.css"))
 
 
+@app.route('/contact')
+def contact():
+    "Render contact.html"
+    return flask.render_template("contact.html")
+
+
 @app.route("/question/<question>")
 def question(question):
     "Answer a question by invoking portfolio-chatbot --question \"${question}\""
