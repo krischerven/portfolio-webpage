@@ -72,17 +72,17 @@
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="website-toggle" data-bs-toggle="tab" type="button"
                       aria-selected="false" onclick="javascript:set_code_tab('website')">
-                Technical portfolio implementation</button>
+                Tech portfolio implementation</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="chatbot-toggle" data-bs-toggle="tab" type="button"
                       aria-selected="false" onclick="javascript:set_code_tab('chatbot')">
-                Portfolio chatbot implementation</button>
+                AI Assistant implementation</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="metaprog-toggle" data-bs-toggle="tab" type="button"
                       aria-selected="true" onclick="javascript:set_code_tab('metaprog')">
-                Real-world metaprogramming</button>
+                Syntactic metaprogramming</button>
             </li>
           </ul>
         </div>
@@ -135,11 +135,11 @@
           <!-- Ready to load JS immediately after #welcome-blurb (which requires Day.js) -->
           <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
           <script src="{{ url_for('static', filename='javascript/debug.js') }}"></script>
-          <p style="font-size: 2em;">You can find several samples of my work here.
+          <p style="font-size: 2em;">You can find several samples of my work on the sidebar.
             <br>
             All of the projects listed here are available on both
             <a href="https://github.com/krischerven">Github</a> and
-            <a href="https://git.krischerven.info/explore/repos">my personal Gitea
+            <a href="https://git.krischerven.info/explore/repos">my own Git
               instance</a>.
         </div>
       </div>
@@ -208,7 +208,7 @@
     </div>
   </div>
   <div id="AI-assistant">
-    Ask me anything about Kris!
+    Hello, I am your personal AI assistant. Please ask me anything about Kris!
     <br><br>
     <div id="AI-message-area">
     </div>
