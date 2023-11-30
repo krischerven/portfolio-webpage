@@ -86,6 +86,40 @@ div.side-navbar {
   top: 100px;
 }
 
+@media (max-width: 1103px) {
+  #AI-assistant {
+    left: 600px;
+  }
+}
+
+@media (max-width: 1026px) {
+  #AI-assistant {
+    left: 235px;
+    top: 135px;
+  }
+}
+
+@media (max-width: 991px) {
+  #AI-assistant {
+    left: 495px;
+  }
+}
+
+@media (max-width: 897px) {
+  #AI-assistant {
+    left: 384px;
+  }
+}
+
+@media (max-width: 804px) {
+  #AI-assistant {
+    display: none !important;
+  }
+  #toggle-AI-assistant {
+    display: none;
+  }
+}
+
 #AI-message-area {
   max-height: 700px;
   overflow-y: scroll;
