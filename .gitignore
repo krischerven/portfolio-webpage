@@ -25,9 +25,8 @@ static/downloads/*
 temp
 third-party-notes.org
 tmp
-todo-later.org
-todo-lp.org
 todo.org
+todo-*.org
 urls.org
 vultr*
 WIP.org
