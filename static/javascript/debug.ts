@@ -11,3 +11,7 @@ function codeFontSize(className = ""): string {
 function codeSize(codeClassName = ""): Array<any> {
   return [codeFontSize(codeClassName), screen.width]
 }
+
+function dget(id = ""): HTMLElement | null {
+  return document.getElementById(id)
+}

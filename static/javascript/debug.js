@@ -7,3 +7,6 @@ function codeFontSize(className = "") {
 function codeSize(codeClassName = "") {
     return [codeFontSize(codeClassName), screen.width];
 }
+function dget(id = "") {
+    return document.getElementById(id);
+}
