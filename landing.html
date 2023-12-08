@@ -67,6 +67,16 @@
               <hr style="margin-top: 0.2em">
             </li>
             <li class="nav-item" role="presentation">
+              <button class="nav-link" id="search-for-users-toggle" data-bs-toggle="tab" type="button"
+                      aria-selected="true" onclick="javascript:set_code_tab('search-for-users')">
+                User searching algorithm (Social app)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="metaprog-toggle" data-bs-toggle="tab" type="button"
+                      aria-selected="true" onclick="javascript:set_code_tab('metaprog')">
+                Syntactic metaprogramming</button>
+            </li>
+            <li class="nav-item" role="presentation">
               <button class="nav-link" id="website-toggle" data-bs-toggle="tab" type="button"
                       aria-selected="false" onclick="javascript:set_code_tab('website')">
                 Tech portfolio implementation</button>
@@ -76,16 +86,6 @@
                       aria-selected="false" onclick="javascript:set_code_tab('chatbot')">
                 AI Assistant implementation</button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="metaprog-toggle" data-bs-toggle="tab" type="button"
-                      aria-selected="true" onclick="javascript:set_code_tab('metaprog')">
-                Syntactic metaprogramming</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="search-for-users-toggle" data-bs-toggle="tab" type="button"
-                      aria-selected="true" onclick="javascript:set_code_tab('search-for-users')">
-                Search for users (social app)</button>
-            </li>
           </ul>
         </div>
       </div>
@@ -93,7 +93,22 @@
 
     <div class="col codearea">
 
-      <!-- Upper navbar: Used for toggling different parts of a snippet (1/2, 2/2, et al.) -->
+
+      <!-- Upper navbar: Used for toggling different parts of this snippet (1/2, 2/2, et al.) -->
+      <ul class="nav nav-pills" id="metaprog-tab" role="tablist" style="display:none">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#metaprog-code-1"
+                  type="button" role="tab" aria-controls="metaprog-code-1" aria-selected="true">
+            1/2</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#metaprog-code-2"
+                  type="button" role="tab" aria-controls="metaprog-code-2" aria-selected="false">
+            2/2</button>
+        </li>
+      </ul>
+
+      <!-- Upper navbar: Used for toggling different parts of this snippet (1/2, 2/2, et al.) -->
       <ul class="nav nav-pills" id="website-tab" role="tablist" style="display:none">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#website-code-1"
@@ -116,20 +131,8 @@
             4/4</button>
         </li>
       </ul>
-      <!-- No navbar for the chatbot implementation, search-for-users, (only one snippet) -->
-      <ul class="nav nav-pills" id="metaprog-tab" role="tablist" style="display:none">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#metaprog-code-1"
-                  type="button" role="tab" aria-controls="metaprog-code-1" aria-selected="true">
-            1/2</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#metaprog-code-2"
-                  type="button" role="tab" aria-controls="metaprog-code-2" aria-selected="false">
-            2/2</button>
-        </li>
-      </ul>
 
+      <!-- Welcome blurb -->
       <div class="tab-content" id="welcome-tab-content">
         <div class="tab-pane fade show active" id="welcome-code-1" role="tabpanel"
              aria-labelledby="welcome-tab-1">
@@ -145,6 +148,40 @@
               instance</a>.
         </div>
       </div>
+
+      <!-- Search for users code -->
+      <div class="tab-content" id="search-for-users-tab-content" style="display:none">
+        <div class="tab-pane fade show active" id="search-for-users-code-1" role="tabpanel"
+             aria-labelledby="search-for-users-tab-1">
+          <pre class="language-kotlin" data-src="{{ search_for_users_download_1 }}" data-download-link>
+            <code class="language-kotlin code-lev">
+            {{ search_for_users_snippet_1 }}
+            </code>
+          </pre>
+        </div>
+      </div>
+
+      <!-- Metaprogramming code -->
+      <div class="tab-content" id="metaprog-tab-content" style="display:none">
+        <div class="tab-pane fade show active" id="metaprog-code-1" role="tabpanel"
+             aria-labelledby="metaprog-tab-1">
+          <pre class="language-lisp" data-src="{{ metaprog_download_1 }}" data-download-link>
+            <code class="language-lisp code-lev">
+            {{ metaprog_snippet_1 }}
+            </code>
+          </pre>
+        </div>
+        <div class="tab-pane fade" id="metaprog-code-2" role="tabpanel"
+             aria-labelledby="metaprog-tab-2">
+          <pre class="language-lisp" data-src="{{ metaprog_download_2 }}" data-download-link>
+            <code class="language-lisp code-lev-deps">
+            {{ metaprog_snippet_2 }}
+            </code>
+          </pre>
+        </div>
+      </div>
+
+      <!-- Website code -->
       <div class="tab-content" id="website-tab-content" style="display:none">
         <div class="tab-pane fade show active" id="website-code-1" role="tabpanel"
              aria-labelledby="website-tab-1">
@@ -179,6 +216,8 @@
           </pre>
         </div>
       </div>
+
+      <!-- Chatbot code -->
       <div class="tab-content" id="chatbot-tab-content" style="display:none">
         <div class="tab-pane fade show active" id="chatbot-code-1" role="tabpanel"
              aria-labelledby="chatbot-tab-1">
@@ -189,34 +228,7 @@
           </pre>
         </div>
       </div>
-      <div class="tab-content" id="search-for-users-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="search-for-users-code-1" role="tabpanel"
-             aria-labelledby="search-for-users-tab-1">
-          <pre class="language-kotlin" data-src="{{ search_for_users_download_1 }}" data-download-link>
-            <code class="language-kotlin code-lev">
-            {{ search_for_users_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-      </div>
-      <div class="tab-content" id="metaprog-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="metaprog-code-1" role="tabpanel"
-             aria-labelledby="metaprog-tab-1">
-          <pre class="language-lisp" data-src="{{ metaprog_download_1 }}" data-download-link>
-            <code class="language-lisp code-lev">
-            {{ metaprog_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-        <div class="tab-pane fade" id="metaprog-code-2" role="tabpanel"
-             aria-labelledby="metaprog-tab-2">
-          <pre class="language-lisp" data-src="{{ metaprog_download_2 }}" data-download-link>
-            <code class="language-lisp code-lev-deps">
-            {{ metaprog_snippet_2 }}
-            </code>
-          </pre>
-        </div>
-      </div>
+
     </div>
   </div>
   <div id="AI-assistant">
