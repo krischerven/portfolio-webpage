@@ -1,3 +1,5 @@
+// The following snippet is a user-finding algorithm derived from a Android social media app.
+
 fun searchForUsers(
   query: String,
   fresh: Boolean,
