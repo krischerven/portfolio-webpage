@@ -4,7 +4,7 @@
    ****************************************************** */
 
 function set_code_tab(name: String) {
-  for (const lang of ["welcome", "metaprog", "website", "chatbot"]) {
+  for (const lang of ["welcome", "metaprog", "search-for-users", "website", "chatbot"]) {
     const x = document.getElementById(`${lang}-tab`)
     if (x != null)
       x.style.display = "none"

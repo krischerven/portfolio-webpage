@@ -81,6 +81,11 @@
                       aria-selected="true" onclick="javascript:set_code_tab('metaprog')">
                 Syntactic metaprogramming</button>
             </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="search-for-users-toggle" data-bs-toggle="tab" type="button"
+                      aria-selected="true" onclick="javascript:set_code_tab('search-for-users')">
+                Search for users (social app)</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -111,7 +116,7 @@
             4/4</button>
         </li>
       </ul>
-      <!-- No navbar for the chatbot implementation (only one snippet) -->
+      <!-- No navbar for the chatbot implementation, search-for-users, (only one snippet) -->
       <ul class="nav nav-pills" id="metaprog-tab" role="tablist" style="display:none">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#metaprog-code-1"
@@ -180,6 +185,16 @@
           <pre class="language-go" data-src="{{ chatbot_download_1 }}" data-download-link>
             <code class="language-go code-chatbot-go">
             {{ chatbot_snippet_1 }}
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div class="tab-content" id="search-for-users-tab-content" style="display:none">
+        <div class="tab-pane fade show active" id="search-for-users-code-1" role="tabpanel"
+             aria-labelledby="search-for-users-tab-1">
+          <pre class="language-kotlin" data-src="{{ search_for_users_download_1 }}" data-download-link>
+            <code class="language-kotlin code-lev">
+            {{ search_for_users_snippet_1 }}
             </code>
           </pre>
         </div>

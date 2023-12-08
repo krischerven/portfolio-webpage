@@ -47,6 +47,7 @@ def landing():
     lev_snippet = read_file("snippets/lev.lisp")
     lev_deps_snippet = read_file("snippets/lev-dependencies.lisp")
     chatbot_snippet = read_file("portfolio-chatbot/main.go")
+    search_for_users_snippet = read_file("snippets/search-for-users.kt")
     serve_snippet = read_file(__file__)
     maints_snippet = read_file(static_file("javascript/main.ts"))
     landing_snippet = read_file("landing.html")
@@ -55,6 +56,7 @@ def landing():
                                  metaprog_snippet_1=lev_snippet,
                                  metaprog_snippet_2=lev_deps_snippet,
                                  chatbot_snippet_1=chatbot_snippet,
+                                 search_for_users_snippet_1=search_for_users_snippet,
                                  website_snippet_1=serve_snippet,
                                  website_snippet_2=maints_snippet,
                                  website_snippet_3=landing_snippet,
@@ -62,6 +64,7 @@ def landing():
                                  metaprog_download_1=download("lev.lisp"),
                                  metaprog_download_2=download("lev-dependencies.lisp"),
                                  chatbot_download_1=download("main.go"),
+                                 search_for_users_download_1=download("search-for-users.kt"),
                                  website_download_1=download("main.py"),
                                  website_download_2=download("main.ts"),
                                  website_download_3=download("landing.html"),
