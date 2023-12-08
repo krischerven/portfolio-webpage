@@ -21,12 +21,13 @@ pyvenv.cfg
 screenfly-checklist.org
 snippets-todo.org
 SSL/
+static/assets/logo-*.png
 static/downloads/*
 temp
 third-party-notes.org
 tmp
-todo.org
 todo-*.org
+todo.org
 urls.org
 vultr*
 WIP.org
