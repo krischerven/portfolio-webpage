@@ -3,6 +3,52 @@
    ****************************** */
 
 
+/* *************
+   * Snippet 1 *
+   ************* */
+
+@media (min-width: 813px) {
+  div.codearea pre code.code-search {
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 880px) {
+  div.codearea pre code.code-search {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 946px) {
+  div.codearea pre code.code-search {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 1283px) {
+  div.codearea pre code.code-search {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1350px) {
+  div.codearea pre code.code-search {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1416px) {
+  div.codearea pre code.code-search {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1483px) {
+  div.codearea pre code.code-search {
+    font-size: 15px;
+  }
+}
+
 /* ***************
    * Snippet 2.1 *
    *************** */
