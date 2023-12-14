@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if ! [ -f ./remote-location ]; then
+    echo "./remote-location does not exist. Please create it and put an IP address in it."
+    exit 1
+fi
+
+if [ "$1" == "" ]; then
+    echo "This script requires one argument (file name)."
+    exit 1
+fi
+
+scp -rp "$1" $(cat ./remote-location):/home/dev
