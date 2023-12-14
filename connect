@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-ssh dev@45.32.5.171 -i vultr
+if ! [ -f ./remote-location ]; then
+    echo "./remote-location does not exist. Please create it and put an IP address in it."
+    exit 1
+fi
+
+ssh dev@$(cat ./remote-location) -i vultr
