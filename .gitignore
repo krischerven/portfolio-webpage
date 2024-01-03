@@ -16,6 +16,7 @@ meta.org
 node_modules
 package-lock.json
 pending.org
+portfolio-webpage.db
 __pycache__
 pyvenv.cfg
 remote-location

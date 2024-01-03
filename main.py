@@ -12,14 +12,28 @@
 
 import logging
 import os
+import sqlite3
 import sys
+from hashlib import md5
+from threading import Lock, Thread
 
 import flask
+from flask import request
 
 from work import server_work
 
 app = flask.Flask(__name__, template_folder=os.getcwd(), static_folder="static")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
+
+database = sqlite3.connect("./portfolio-webpage.db", check_same_thread=False)
+database.execute("""
+    create table if not exists hashed_ips (id integer primary key, timestamp datetime
+                                           default current_timestamp not null,
+                                           checksum text not null,
+                                           page text not null)
+    """)
+
+mutex = Lock()
 
 logging.basicConfig()
 logger = logging.getLogger("portfolio-webpage")
@@ -41,9 +55,25 @@ def read_file(file):
     return open(file).read()
 
 
+def get_client_address():
+    if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+        return request.environ['REMOTE_ADDR']
+    # if behind a proxy
+    else:
+        return request.environ['HTTP_X_FORWARDED_FOR']
+
+
+def store_hashed_address(raw_address, page):
+    with mutex:
+        database.execute("insert into hashed_ips (checksum, page) values(?, ?)",
+                         (md5(raw_address.encode()).hexdigest(), page))
+        database.commit()
+
+
 @app.route('/')
 def landing():
     "Render landing.html"
+    Thread(target=store_hashed_address, args=(get_client_address(), "landing")).start()
     search_for_users_snippet = read_file("snippets/search-for-users.kt")
     lev_snippet = read_file("snippets/lev.lisp")
     lev_deps_snippet = read_file("snippets/lev-dependencies.lisp")
@@ -61,7 +91,8 @@ def landing():
                                  website_snippet_3=landing_snippet,
                                  website_snippet_4=stylesheet_snippet,
                                  chatbot_snippet_1=chatbot_snippet,
-                                 search_for_users_download_1=download("search-for-users.kt"),
+                                 search_for_users_download_1=download(
+                                     "search-for-users.kt"),
                                  metaprog_download_1=download("lev.lisp"),
                                  metaprog_download_2=download("lev-dependencies.lisp"),
                                  website_download_1=download("main.py"),
@@ -74,6 +105,7 @@ def landing():
 @app.route('/contact')
 def contact():
     "Render contact.html"
+    Thread(target=store_hashed_address, args=(get_client_address(), "contact")).start()
     return flask.render_template("contact.html")
 
 
