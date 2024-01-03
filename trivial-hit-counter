@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import sqlite3
+
+database = sqlite3.connect("./portfolio-webpage.db")
+
+landing_hits = database.execute(
+    "select count(distinct checksum) from hashed_ips where page='landing'").fetchone()[0]
+
+contact_hits = database.execute(
+    "select count(distinct checksum) from hashed_ips where page='contact'").fetchone()[0]
+
+print(f"{landing_hits} unique hits on landing.html, {contact_hits} unique hits on contact.html")
