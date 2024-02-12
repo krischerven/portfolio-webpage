@@ -94,7 +94,7 @@ function create_chatbot_question(question: string) {
 
 function create_chatbot_answer(answer: string, br=1) {
   const span = document.createElement("span")
-  span.innerText = "A: " + answer
+  span.innerText = (answer == "") ? "An error occured on the server." : "A: " + answer
   const messageArea = document.getElementById("AI-message-area")!!
   messageArea.appendChild(span)
   for (let i = 0; i < br; i++)
