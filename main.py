@@ -109,10 +109,11 @@ def contact():
     return flask.render_template("contact.html")
 
 
-@app.route("/question/<question>")
-def question(question):
-    "Answer a question by invoking portfolio-chatbot --question \"${question}\""
-    cmd = f"cd portfolio-chatbot && ./portfolio-chatbot --question \"{question}\""
+@app.route("/question/<uuid>/<question>")
+def question(uuid, question):
+    "Answer a question by invoking portfolio-chatbot --uuid $uuid --question $question"
+    hashed_address = md5(get_client_address().encode()).hexdigest()
+    cmd = f"cd portfolio-chatbot && ./portfolio-chatbot \"{uuid}\" \"{hashed_address}\" \"{question}\""
     return {"response": os.popen(cmd).read()}
 
 

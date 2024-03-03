@@ -1,4 +1,5 @@
 "use strict";
+const chatbotUUID = crypto.randomUUID();
 function set_code_tab(name) {
     for (const lang of ["welcome", "metaprog", "search-for-users", "website", "chatbot"]) {
         const x = document.getElementById(`${lang}-tab`);
@@ -49,7 +50,7 @@ async function toggle_AI_assistant_dialogue() {
 function ask_chatbot_question_interactively(question) {
     const host = location.host.startsWith("localhost") ?
         "http://localhost:5000" : "https://krischerven.info";
-    fetch(host + "/question/" + question)
+    fetch(host + "/question/" + chatbotUUID + "/" + question)
         .then((response) => response.json())
         .then((json) => console.log(json.response))
         .catch((error) => console.error(error));
@@ -66,7 +67,7 @@ function ask_chatbot_question() {
     }
     else {
         create_chatbot_question(question);
-        fetch(host + "/question/" + question)
+        fetch(host + "/question/" + chatbotUUID + "/" + question)
             .then((response) => response.json())
             .then((json) => create_chatbot_answer(json.response))
             .catch((error) => console.error(error));
