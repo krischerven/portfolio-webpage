@@ -214,7 +214,7 @@ fun searchForUsers(
         } else {
           if (fresh) {
             Log.e(logTag, "Failed to search for users: Server says: $line")
-              Log.d(logTag, "elapsedMS(outer)=${System.currentTimeMillis() - ms1} for users=???")
+            Log.d(logTag, "elapsedMS(outer)=${System.currentTimeMillis() - ms1} for users=???")
             if (line == "ERROR: No matching users were found.") {
               val text = TextView(context)
               text.text = "Unfortunately, we couldn't find anyone who lives near you."
@@ -233,7 +233,7 @@ fun searchForUsers(
         }
       })
     } catch (e: Throwable) {
-        Log.d(logTag, "elapsedMS(outer)=${System.currentTimeMillis()-ms1} for users=???")
+      Log.d(logTag, "elapsedMS(outer)=${System.currentTimeMillis()-ms1} for users=???")
       Log.e("Error logging in", e.toString())
       throw IOException("Error logging in (no data)", e)
     }
