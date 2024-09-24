@@ -49,91 +49,101 @@
 
 <div class="container-fluid" style="margin-top:2em;margin-left:1em;">
 
-  <h2>Major Open Source Projects</h2>
-  <br>
-  <div class="col side-navbar" style="left:1em;">
-    <div class="row">
-      <div class="col">
-        <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/krischerven/scarlatti">Scarlatti</a>
-            <div class="subtext">
-              A modern, powerful GTK+ music player for Linux and WSL.<br>Originally a fork of the Lollypop
-              music player for GNOME, Scarlatti has added a significant number of features and continues
-              to be actively developed.
-            </div>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/krischerven/stradina">Stradina</a>
-            <div class="subtext">
-              A research application about walking and urban form that you can use to collect data about
-              your trips, analyze them, and optimize them.<br>Uses the Google Maps API for various features.
-            </div>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/ankitects/anki">Anki (Contributor)</a>
-            <div class="subtext">
-              The popular spaced repetition flashcards application.
-              With Anki, you can either reduce time spent studying or learn vastly more in the same amount of time.
-            </div>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/vlang/v">Vlang (Contributor)</a>
-            <div class="subtext">
-              A low-level, safe programming language that draws heavily from Go & Rust.
-            </div>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/goulinkh/podcast-cli">podcast-cli (Contributor)</a>
-            <div class="subtext">
-              A CLI podcast player.
-            </div>
-          </li>
-          <!-- <li class="nav-item" role="presentation"> -->
-          <!--   <a href="https://github.com/krischerven/gomics">gomics (fork) FIXME</a> -->
-          <!--   <div class="subtext"> -->
-          <!--     A simple GTK+ comic book viewer written in Go. -->
-          <!--   </div> -->
-          <!-- </li> -->
-        </ul>
+  <div class="row">
+    <div class="col-6">
+      <h1>Major Open Source Projects</h1>
+      <br>
+      <div class="col side-navbar" style="left:1em;">
+        <div class="row">
+          <div class="col">
+            <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('Scarlatti');">
+                <a href="https://github.com/krischerven/scarlatti">Scarlatti</a>
+                <div class="subtext">
+                  A modern, powerful GTK+ music player for Linux and WSL.<br>Originally a fork of the Lollypop
+                  music player for GNOME, Scarlatti has added a significant number of features and continues
+                  to be actively developed.
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('Stradina');">
+                <a href="https://github.com/krischerven/stradina">Stradina</a>
+                <div class="subtext">
+                  A research application about walking and urban form that you can use to collect data about
+                  your trips, analyze them, and optimize them.<br>Uses the Google Maps API for various features.
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('Anki');">
+                <a href="https://github.com/ankitects/anki">Anki (Contributor)</a>
+                <div class="subtext">
+                  The popular spaced repetition flashcards application.
+                  With Anki, you can either reduce time spent studying or learn vastly more in the same amount of time.
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('Vlang');">
+                <a href="https://github.com/vlang/v">Vlang (Contributor)</a>
+                <div class="subtext">
+                  A low-level, safe programming language that draws heavily from Go & Rust.
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('podcast-cli');">
+                <a href="https://github.com/goulinkh/podcast-cli">podcast-cli (Contributor)</a>
+                <div class="subtext">
+                  A CLI podcast player.
+                </div>
+              </li>
+              <!-- <li class="nav-item" role="presentation"> -->
+              <!--   <a href="https://github.com/krischerven/gomics">gomics (fork) FIXME</a> -->
+              <!--   <div class="subtext"> -->
+              <!--     A simple GTK+ comic book viewer written in Go. -->
+              <!--   </div> -->
+              <!-- </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <h1>Miscellaneous Open Source Tools</h1>
+      <br>
+      <div class="col side-navbar" style="left:1em;">
+        <div class="row">
+          <div class="col">
+            <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('measure-gc');">
+                <a href="https://github.com/krischerven/measure-gc">measure-gc</a>
+                <div class="subtext">
+                  A simple Go package for precisely measuring GC pause times on the main thread.
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('linux-discord-updater');">
+                <a href="https://github.com/krischerven/linux-discord-updater">linux-discord-updater</a>
+                <div class="subtext">
+                  A tiny but super useful tool for streamlining the Discord updating process on Linux systems.
+                  (if you know, you know)
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('goalias');">
+                <a href="https://github.com/krischerven/goalias">goalias</a>
+                <div class="subtext">
+                  A Go program for creating aliases for simple shell commands. Essentially an alternative to ~/.bash_aliases without the various footguns.
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" onmouseenter="javascript:set_sample_image('gosql');">
+                <a href="https://github.com/eatonphil/gosql">gosql (Contributor)</a>
+                <div class="subtext">
+                  A PostgreSQL implementation in Go.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <br>
-  <h2>Miscellaneous Open Source Tools</h2>
-  <br>
-  <div class="col side-navbar" style="left:1em;">
-    <div class="row">
-      <div class="col">
-        <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/krischerven/measure-gc">measure-gc</a>
-            <div class="subtext">
-              A simple Go package for precisely measuring GC pause times on the main thread.
-            </div>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/krischerven/linux-discord-updater">linux-discord-updater</a>
-            <div class="subtext">
-              A tiny but super useful tool for streamlining the Discord updating process on Linux systems.
-              (if you know, you know)
-            </div>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/krischerven/goalias">goalias</a>
-            <div class="subtext">
-              A Go program for creating aliases for simple shell commands. Essentially an alternative to ~/.bash_aliases without the various footguns.
-            </div>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a href="https://github.com/eatonphil/gosql">gosql (Contributor)</a>
-            <div class="subtext">
-              An PostgreSQL implementation in Go.
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div class="col" id="software-sample">
+      <img id="software-sample-img" width="90%" height="auto" alt="">
+      </img>
+      <p id="software-sample-img-desc" style="font-style:italic;">
+      </p>
     </div>
   </div>
 
@@ -167,6 +177,7 @@
     </textarea>
     <button type="button" class="btn btn-info btn-sm" id="AI-send-button" onclick="ask_chatbot_question()">Send <i class="fa-solid fa-paper-plane"/></i></button>
   </div>
+
 </div>
 </body>
 </html>

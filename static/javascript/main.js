@@ -32,6 +32,45 @@ function get_welcome_blurb(hour_) {
 function set_welcome_blurb() {
     document.getElementById("welcome-blurb").innerHTML = get_welcome_blurb();
 }
+function set_sample_image(img_) {
+    let img = "";
+    let blurb = "";
+    let padding = 0;
+    switch (img_) {
+        case "Scarlatti":
+            img = "./static/assets/sample/scarlatti.png";
+            blurb = "the Scarlatti music player in action";
+            padding = 14;
+            break;
+        case "Anki":
+            img = "./static/assets/sample/anki.jpg";
+            blurb = "a student using Anki to study immunology";
+            padding = 45;
+            break;
+        case "Vlang":
+            img = "./static/assets/sample/vlang.jpg";
+            blurb = "plotting data points in V";
+            padding = -4;
+            break;
+        case "podcast-cli":
+            img = "./static/assets/sample/podcast-cli.gif";
+            blurb = "podcast-cli";
+            break;
+    }
+    if (img != "") {
+        document.getElementById("software-sample-img").src = img;
+        const desc = document.getElementById("software-sample-img-desc");
+        desc.innerText = blurb;
+        if (padding >= 0) {
+            desc.style.paddingLeft = padding + "px";
+            desc.style.paddingRight = "0px";
+        }
+        else {
+            desc.style.paddingLeft = "0px";
+            desc.style.paddingRight = -padding + "px";
+        }
+    }
+}
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
