@@ -72,6 +72,11 @@ div.side-navbar {
   flex: 0 0 100%;
 }
 
+div.subtext {
+  font-size: 0.7em;
+  padding-bottom: 10px;
+}
+
 #AI-assistant {
   opacity: 0;
   display: none;

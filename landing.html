@@ -45,188 +45,116 @@
   </ul>
 </nav>
 
-<div class="container-fluid" style="margin-top:2em;">
+<div class="container-fluid" style="margin-top:2em;margin-left:1em;">
 
-  <div class="row">
-
-    <br/>
-
-    <!-- Side navbar: Website Source, Metaprogramming, etc -->
-    <div class="col side-navbar" style="left:1em;">
-      <div class="row">
-        <div class="col">
-          <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active mx-auto" id="welcome-toggle" data-bs-toggle="tab"
-                      type="button" aria-selected="false"
-                      onclick="javascript:set_code_tab('welcome')">Portfolio</button>
-              <hr style="margin-top: 0.2em">
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="search-for-users-toggle" data-bs-toggle="tab" type="button"
-                      aria-selected="true" onclick="javascript:set_code_tab('search-for-users')">
-                People search (Kotlin)</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="metaprog-toggle" data-bs-toggle="tab" type="button"
-                      aria-selected="true" onclick="javascript:set_code_tab('metaprog')">
-                Metaprogramming (Lisp)</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="website-toggle" data-bs-toggle="tab" type="button"
-                      aria-selected="false" onclick="javascript:set_code_tab('website')">
-                Portfolio (Python, TS, etc.)</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="chatbot-toggle" data-bs-toggle="tab" type="button"
-                      aria-selected="false" onclick="javascript:set_code_tab('chatbot')">
-                Portfolio chatbot (Go)</button>
-            </li>
-          </ul>
-        </div>
+  <h2>Major Open Source Projects</h2>
+  <br>
+  <div class="col side-navbar" style="left:1em;">
+    <div class="row">
+      <div class="col">
+        <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/krischerven/scarlatti">Scarlatti</a>
+            <div class="subtext">
+              A modern, powerful GTK+ music player for Linux and WSL.<br>Originally a fork of the Lollypop
+              music player for GNOME, Scarlatti has added a significant number of features and continues
+              to be actively developed.
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/krischerven/stradina">Stradina</a>
+            <div class="subtext">
+              A research application about walking and urban form that you can use to collect data about
+              your trips and optimize them.<br>Uses the Google Maps API.
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/ankitects/anki">Anki (Contributor)</a>
+            <div class="subtext">
+              The popular spaced flashcards application. With Anki, you can either reduce time spent studying
+              or learn vastly more in the same amount of time.
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/vlang/v">Vlang (Contributor)</a>
+            <div class="subtext">
+              A low-level but safe research programming language that draws heavily from Go & Rust.
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/goulinkh/podcast-cli">podcast-cli (Contributor)</a>
+            <div class="subtext">
+              A CLI podcast player.
+            </div>
+          </li>
+          <!-- <li class="nav-item" role="presentation"> -->
+          <!--   <a href="https://github.com/krischerven/gomics">gomics (fork) FIXME</a> -->
+          <!--   <div class="subtext"> -->
+          <!--     A simple GTK+ comic book viewer written in Go. -->
+          <!--   </div> -->
+          <!-- </li> -->
+        </ul>
       </div>
-    </div>
-
-    <div class="col codearea">
-
-
-      <!-- Upper navbar: Used for toggling different parts of this snippet (1/2, 2/2, et al.) -->
-      <ul class="nav nav-pills" id="metaprog-tab" role="tablist" style="display:none">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#metaprog-code-1"
-                  type="button" role="tab" aria-controls="metaprog-code-1" aria-selected="true">
-            1/2</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#metaprog-code-2"
-                  type="button" role="tab" aria-controls="metaprog-code-2" aria-selected="false">
-            2/2</button>
-        </li>
-      </ul>
-
-      <!-- Upper navbar: Used for toggling different parts of this snippet (1/2, 2/2, et al.) -->
-      <ul class="nav nav-pills" id="website-tab" role="tablist" style="display:none">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#website-code-1"
-                  type="button" role="tab" aria-controls="website-code-1" aria-selected="true">
-            1/4</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-2"
-                  type="button" role="tab" aria-controls="website-code-2" aria-selected="false">
-            2/4</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-3"
-                  type="button" role="tab" aria-controls="website-code-3" aria-selected="false">
-            3/4</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#website-code-4"
-                  type="button" role="tab" aria-controls="website-code-4" aria-selected="false">
-            4/4</button>
-        </li>
-      </ul>
-
-      <!-- Welcome blurb -->
-      <div class="tab-content" id="welcome-tab-content">
-        <div class="tab-pane fade show active" id="welcome-code-1" role="tabpanel"
-             aria-labelledby="welcome-tab-1">
-          <h1 class="display-2" id="welcome-blurb"></h1>
-          <!-- Ready to load JS immediately after #welcome-blurb (which requires Day.js) -->
-          <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
-          <script src="{{ url_for('static', filename='javascript/debug.js') }}"></script>
-          <p style="font-size: 2em;">You can find several samples of my work on the sidebar.
-            <br>
-            All of the projects here are available on both
-            <a href="https://github.com/krischerven">Github</a> and
-            <a href="https://git.krischerven.info/explore/repos">a more lightweight Gitea
-              instance</a>.
-        </div>
-      </div>
-
-      <!-- Search for users code -->
-      <div class="tab-content" id="search-for-users-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="search-for-users-code-1" role="tabpanel"
-             aria-labelledby="search-for-users-tab-1">
-          <pre class="language-kotlin" data-src="{{ search_for_users_download_1 }}" data-download-link>
-            <code class="language-kotlin code-search">
-            {{ search_for_users_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <!-- Metaprogramming code -->
-      <div class="tab-content" id="metaprog-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="metaprog-code-1" role="tabpanel"
-             aria-labelledby="metaprog-tab-1">
-          <pre class="language-lisp" data-src="{{ metaprog_download_1 }}" data-download-link>
-            <code class="language-lisp code-lev">
-            {{ metaprog_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-        <div class="tab-pane fade" id="metaprog-code-2" role="tabpanel"
-             aria-labelledby="metaprog-tab-2">
-          <pre class="language-lisp" data-src="{{ metaprog_download_2 }}" data-download-link>
-            <code class="language-lisp code-lev-deps">
-            {{ metaprog_snippet_2 }}
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <!-- Website code -->
-      <div class="tab-content" id="website-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="website-code-1" role="tabpanel"
-             aria-labelledby="website-tab-1">
-          <pre class="language-python" data-src="{{ website_download_1 }}" data-download-link>
-            <code class="language-python code-main-py">
-            {{ website_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-        <div class="tab-pane fade" id="website-code-2" role="tabpanel"
-             aria-labelledby="website-tab-2">
-          <pre class="language-typescript" data-src="{{ website_download_2 }}" data-download-link>
-            <code class="language-typescript code-main-ts">
-            {{ website_snippet_2 }}
-            </code>
-          </pre>
-        </div>
-        <div class="tab-pane fade" id="website-code-3" role="tabpanel"
-             aria-labelledby="website-tab-3">
-          <pre class="language-html" data-src="{{ website_download_3 }}" data-download-link>
-            <code class="language-html code-landing-html">
-            {{ website_snippet_3 }}
-            </code>
-          </pre>
-        </div>
-        <div class="tab-pane fade" id="website-code-4" role="tabpanel"
-             aria-labelledby="website-tab-4">
-          <pre class="language-css" data-src="{{ website_download_4 }}" data-download-link>
-            <code class="language-css code-stylesheet-css">
-            {{ website_snippet_4 }}
-            </code>
-          </pre>
-        </div>
-      </div>
-
-      <!-- Chatbot code -->
-      <div class="tab-content" id="chatbot-tab-content" style="display:none">
-        <div class="tab-pane fade show active" id="chatbot-code-1" role="tabpanel"
-             aria-labelledby="chatbot-tab-1">
-          <pre class="language-go" data-src="{{ chatbot_download_1 }}" data-download-link>
-            <code class="language-go code-chatbot-go">
-            {{ chatbot_snippet_1 }}
-            </code>
-          </pre>
-        </div>
-      </div>
-
     </div>
   </div>
+
+  <br>
+  <h2>Miscellaneous Open Source Tools</h2>
+  <br>
+  <div class="col side-navbar" style="left:1em;">
+    <div class="row">
+      <div class="col">
+        <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/krischerven/measure-gc">measure-gc</a>
+            <div class="subtext">
+              A simple Go package for precisely measuring GC pause times on the main thread.
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/krischerven/linux-discord-updater">linux-discord-updater</a>
+            <div class="subtext">
+              A tiny but super useful tool for streamlining the Discord updating process on Linux systems.
+              (if you know, you know)
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/krischerven/goalias">goalias</a>
+            <div class="subtext">
+              A Go program for creating aliases for simple shell commands. Essentially an alternative to ~/.bash_aliases without the various footguns.
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="https://github.com/eatonphil/gosql">gosql (Contributor)</a>
+            <div class="subtext">
+              An PostgreSQL implementation in Go.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- <br> -->
+  <!-- <h2>Miscellaneous other projects</h2> -->
+  <!-- <div class="col side-navbar" style="left:1em;"> -->
+  <!--   <div class="row"> -->
+  <!--     <div class="col"> -->
+  <!--       <ul class="nav flex-column nav-pills" id="snippet-tab" role="tablist"> -->
+  <!--         <li class="nav-item" role="presentation"> -->
+  <!--           hydroponics.lisp -->
+  <!--           <div class="subtext"> -->
+
+  <!--           </div> -->
+  <!--         </li> -->
+  <!--         <li class="nav-item" role="presentation"> -->
+  <!--           go-interview -->
+  <!--         </li> -->
+  <!--       </ul> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!-- </div> -->
+
   <div id="AI-assistant">
     Hello, I am your personal AI assistant. Please ask me anything about Kris!
     <br><br>
