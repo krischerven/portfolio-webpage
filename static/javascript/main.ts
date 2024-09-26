@@ -50,17 +50,18 @@ function set_sample_image(img_) {
   case "Scarlatti":
     img = "./static/assets/sample/scarlatti.png"
     blurb = "the Scarlatti music player in action"
-    padding = 14
+    // FIXME screenfly ems
+    padding = 0.875
     break
   case "Anki":
     img = "./static/assets/sample/anki.jpg"
     blurb = "a student using Anki to study immunology"
-    padding = 45
+    padding = 2.8125
     break
   case "Vlang":
     img = "./static/assets/sample/vlang.jpg"
     blurb = "plotting data points in V"
-    padding = -4
+    padding = -0.25
     break
   case "podcast-cli":
     img = "./static/assets/sample/podcast-cli.gif"
@@ -74,11 +75,11 @@ function set_sample_image(img_) {
     const desc = document.getElementById("software-sample-img-desc")!!
     desc.innerText = blurb
     if (padding >= 0) {
-      desc.style.paddingLeft = padding+"px"
-      desc.style.paddingRight = "0px"
+      desc.style.paddingLeft = padding+"em"
+      desc.style.paddingRight = "0em"
     } else {
-      desc.style.paddingLeft = "0px"
-      desc.style.paddingRight = -padding+"px"
+      desc.style.paddingLeft = "0em"
+      desc.style.paddingRight = -padding+"em"
     }
   }
 }
