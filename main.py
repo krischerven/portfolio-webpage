@@ -2,7 +2,6 @@
 
 ######################################################
 # main.py: A simple Flask app to host the portfolio. #
-# https://git.krischerven.info/dev/portfolio-webpage #
 #                                                    #
 # Usage (brackets represent optional arguments):     #
 #   ./main.py                                        #
