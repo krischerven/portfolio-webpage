@@ -42,6 +42,10 @@ function set_sample_image(img_) {
             blurb = "the Scarlatti music player in action";
             padding = 0.875;
             break;
+        case "Stradina":
+            img = "./static/assets/sample/stradina.png";
+            blurb = "using Stradina to optimize a trip based on past data";
+            break;
         case "Anki":
             img = "./static/assets/sample/anki.jpg";
             blurb = "a student using Anki to study immunology";
