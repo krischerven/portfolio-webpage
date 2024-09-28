@@ -4,5 +4,5 @@
 	branch = master
 [submodule "portfolio-chatbot"]
 	path = portfolio-chatbot
-	url = https://git.krischerven.info/dev/portfolio-chatbot
+	url = https://github.com/krischerven/portfolio-chatbot
 	branch = master
