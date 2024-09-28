@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# echo "Restarting gitea..."
-# sudo systemctl restart gitea
-# echo "Restarting gitea-daemon.service..."
-# sudo systemctl restart gitea-daemon
+echo "Restarting gitea..."
+sudo systemctl restart gitea
+echo "Restarting gitea-daemon.service..."
+sudo systemctl restart gitea-daemon
 echo "Restarting portfolio-webpage-1.service..."
 sudo systemctl restart portfolio-webpage-1
 echo "Restarting portfolio-webpage-2.service..."
