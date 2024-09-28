@@ -13,6 +13,7 @@
   },
   "files": [
     "./main.ts",
-    "./debug.ts"
+    "./debug.ts",
+    "./utils.ts"
   ]
 }
