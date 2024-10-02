@@ -62,8 +62,10 @@ function set_sample_image(img_) {
             break;
     }
     if (img != "") {
-        document.getElementById("software-sample-img").src = img;
-        const desc = document.getElementById("software-sample-img-desc");
+        document.getElementById("software-sample-default").style.display = "none";
+        document.getElementById("software-sample-custom").style.display = "inline";
+        document.getElementById("software-sample-img-3").src = img;
+        const desc = document.getElementById("software-sample-img-desc-3");
         desc.innerText = blurb;
         if (padding >= 0) {
             desc.style.paddingLeft = padding + "em";
@@ -73,6 +75,10 @@ function set_sample_image(img_) {
             desc.style.paddingLeft = "0em";
             desc.style.paddingRight = -padding + "em";
         }
+    }
+    else {
+        document.getElementById("software-sample-default").style.display = "inline";
+        document.getElementById("software-sample-custom").style.display = "none";
     }
 }
 function sleep(ms) {
