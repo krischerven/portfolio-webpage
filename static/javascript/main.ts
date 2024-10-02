@@ -1,6 +1,5 @@
 /* ******************************************************
    * main.ts: Typescript functionality for landing.html *
-   * https://git.krischerven.info/dev/portfolio-webpage *
    ****************************************************** */
 
 const chatbotUUID = crypto.randomUUID()
