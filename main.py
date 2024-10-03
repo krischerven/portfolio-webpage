@@ -11,6 +11,7 @@
 
 import logging
 import os
+import requests
 import sqlite3
 import sys
 from hashlib import md5
@@ -114,6 +115,29 @@ def question(uuid, question):
     hashed_address = md5(get_client_address().encode()).hexdigest()
     cmd = f"cd portfolio-chatbot && ./portfolio-chatbot \"{uuid}\" \"{hashed_address}\" \"{question}\""
     return {"response": os.popen(cmd).read()}
+
+@app.route("/email/<subject>/<body>")
+def email(subject, body):
+
+    body = body.replace("$LBR$", "\n")
+    MAILGUN_API_URL = "https://api.mailgun.net/v3/mg.krischerven.info/messages"
+    FROM_EMAIL_ADDRESS = "krischerven.info mailbox <mailgun@mg.krischerven.info>"
+
+    try:
+        api_key = open("portfolio-webpage-untracked/MAILGUN_API_KEY").read()
+        resp = requests.post(MAILGUN_API_URL, auth=("api", api_key),
+                             data={"from": FROM_EMAIL_ADDRESS,
+                                   "to": "krischerven@gmail.com",
+                                   "subject": subject + " (krischerven.info mailbox)",
+                                   "text": body})
+
+        if resp.status_code != 200:
+            logging.error(f"Could not send the email: {resp.status_code} {resp.text}")
+
+        return {"response": resp.status_code}
+
+    except Exception as e:
+        logging.exception(f"Mailgun error: {e}")
 
 
 def main():

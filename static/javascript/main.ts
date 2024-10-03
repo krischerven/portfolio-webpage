@@ -107,6 +107,64 @@ async function toggle_AI_assistant_dialogue() {
   }
 }
 
+function send_email() {
+
+  const subject = (document.getElementById("send-email-subject") as HTMLTextAreaElement)!!
+  const body = (document.getElementById("send-email-body") as HTMLTextAreaElement)!!
+
+  const subjectText = subject.value
+  const bodyText = body.value.replaceAll("\n", "$LBR$")
+
+  subject.style.color = "initial"
+  body.style.color = "initial"
+
+  let returning = false
+
+  if (subjectText.trim() == "") {
+    subject.style.color = "red"
+    if (subject.addEventListener) {
+      subject.addEventListener('input', () => {
+        subject.style.color = "initial"
+      }, false);
+    } else if ((subject as any).attachEvent) {
+      (subject as any).attachEvent('onpropertychange', () => {
+        subject.style.color = "initial"
+      });
+    }
+    returning = true
+  }
+
+  if (bodyText.trim() == "") {
+    body.style.color = "red"
+    if (body.addEventListener) {
+      body.addEventListener('input', () => {
+        body.style.color = "initial"
+      }, false);
+    } else if ((body as any).attachEvent) {
+      (body as any).attachEvent('onpropertychange', () => {
+        body.style.color = "initial"
+      });
+    }
+    returning = true
+  }
+
+  if (returning)
+    return
+
+  const host = location.host.startsWith("localhost") ?
+    "http://localhost:5000" : "https://krischerven.info"
+
+  fetch(host + "/email/" + subjectText + "/" + bodyText)
+    .then((response) => response.json())
+    .then((json) => console.log(json.response))
+    .catch((error) => console.error(error))
+
+  subject.value = ""
+  body.value = ""
+
+}
+
+
 function ask_chatbot_question_interactively(question: string) {
   const host = location.host.startsWith("localhost") ?
     "http://localhost:5000" : "https://krischerven.info"

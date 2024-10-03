@@ -45,9 +45,17 @@
   <br>
   <!-- 1.75em is the same font size as <h2> -->
   <p style="font-size: 1.75em;">
-    Email: krischerven@gmail.com
+    Email: krischerven@gmail.com<br>
+    Mobile: (248) 787 5715<br><br>
+    I am usually open to freelancing and consulting.<br>
+    Please feel free to send me a message using the form below:
+    <form method="post" action="email-form.php">
+    <textarea id="send-email-subject" placeholder="Subject" cols="40" rows="1"></textarea>
     <br>
-    Mobile: (248) 787 5715
+    <textarea id="send-email-body" placeholder="Please leave your contact information somewhere in the message so I can get back to you." cols="40" rows="4"></textarea>
+    <br>
+    <button type="button" class="btn btn-dark btn-sm" id="send-email-button" style="margin-top:5xp" onclick="send_email()">Send</button>
+    </form>
   </p>
 </div>
 

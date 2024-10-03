@@ -151,6 +151,11 @@ div.subtext {
   100% { opacity: 0; }
 }
 
+#send-email-button {
+  margin-top:10px;
+  font-size:0.9em;
+}
+
 #AI-send-button {
   height:30px;
   font-size:0.9em;
