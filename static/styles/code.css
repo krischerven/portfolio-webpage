@@ -238,43 +238,43 @@
    *************** */
 
 @media (min-width: 730px) {
-  div.codearea pre code.code-landing-html {
+  div.codearea pre code.code-portfolio-html {
     font-size: 9px;
   }
 }
 
 @media (min-width: 790px) {
-  div.codearea pre code.code-landing-html {
+  div.codearea pre code.code-portfolio-html {
     font-size: 10px;
   }
 }
 
 @media (min-width: 849px) {
-  div.codearea pre code.code-landing-html {
+  div.codearea pre code.code-portfolio-html {
     font-size: 11px;
   }
 }
 
 @media (min-width: 909px) {
-  div.codearea pre code.code-landing-html {
+  div.codearea pre code.code-portfolio-html {
     font-size: 12px;
   }
 }
 
 @media (min-width: 1242px) {
-  div.codearea pre code.code-landing-html {
+  div.codearea pre code.code-portfolio-html {
     font-size: 13px;
   }
 }
 
 @media (min-width: 1301px) {
-  div.codearea pre code.code-landing-html {
+  div.codearea pre code.code-portfolio-html {
     font-size: 14px;
   }
 }
 
 @media (min-width: 1361px) {
-  div.codearea pre code.code-landing-html {
+  div.codearea pre code.code-portfolio-html {
     font-size: 15px;
   }
 }

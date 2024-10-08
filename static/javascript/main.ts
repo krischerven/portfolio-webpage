@@ -1,5 +1,5 @@
 /* ******************************************************
-   * main.ts: Typescript functionality for landing.html *
+   * main.ts: Typescript functionality for portfolio.html *
    ****************************************************** */
 
 const chatbotUUID = crypto.randomUUID()

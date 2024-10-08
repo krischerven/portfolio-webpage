@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 mkdir -p static/downloads
 rm static/downloads/* > /dev/null 2>&1
-ln landing.html static/downloads
+ln portfolio.html static/downloads
 ln snippets/* static/downloads
 ln static/javascript/main.ts static/downloads
 ln static/styles/stylesheet.css static/downloads

@@ -71,24 +71,24 @@ def store_hashed_address(raw_address, page):
 
 
 @app.route('/')
-def landing():
-    "Render landing.html"
-    Thread(target=store_hashed_address, args=(get_client_address(), "landing")).start()
+def portfolio():
+    "Render portfolio.html"
+    Thread(target=store_hashed_address, args=(get_client_address(), "portfolio")).start()
     search_for_users_snippet = read_file("snippets/search-for-users.kt")
     lev_snippet = read_file("snippets/lev.lisp")
     lev_deps_snippet = read_file("snippets/lev-dependencies.lisp")
     serve_snippet = read_file(__file__)
     maints_snippet = read_file(static_file("javascript/main.ts"))
-    landing_snippet = read_file("landing.html")
+    portfolio_snippet = read_file("portfolio.html")
     stylesheet_snippet = read_file("stylesheet.css")
     chatbot_snippet = read_file("portfolio-chatbot/main.go")
-    return flask.render_template("landing.html",
+    return flask.render_template("portfolio.html",
                                  search_for_users_snippet_1=search_for_users_snippet,
                                  metaprog_snippet_1=lev_snippet,
                                  metaprog_snippet_2=lev_deps_snippet,
                                  website_snippet_1=serve_snippet,
                                  website_snippet_2=maints_snippet,
-                                 website_snippet_3=landing_snippet,
+                                 website_snippet_3=portfolio_snippet,
                                  website_snippet_4=stylesheet_snippet,
                                  chatbot_snippet_1=chatbot_snippet,
                                  search_for_users_download_1=download(
@@ -97,7 +97,7 @@ def landing():
                                  metaprog_download_2=download("lev-dependencies.lisp"),
                                  website_download_1=download("main.py"),
                                  website_download_2=download("main.ts"),
-                                 website_download_3=download("landing.html"),
+                                 website_download_3=download("portfolio.html"),
                                  website_download_4=download("stylesheet.css"),
                                  chatbot_download_1=download("main.go"))
 
@@ -142,7 +142,7 @@ def email(subject, body):
 
 def main():
     "Main function"
-    logger.debug("Serving landing.html")
+    logger.debug("Serving portfolio.html")
     debug_mode = "+debug" in sys.argv
     app.run("0.0.0.0", debug=debug_mode)
     logger.debug("Program exited (0)")
