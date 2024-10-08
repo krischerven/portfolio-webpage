@@ -4,6 +4,7 @@ import sqlite3
 
 database = sqlite3.connect("./portfolio-webpage.db")
 
+# Daily unique hits
 landing_hits = database.execute(
     "select count(distinct checksum) from hashed_ips where page='landing' and timestamp "
     + ">= datetime('now', '-24 hours')").fetchone()[0]
@@ -14,6 +15,18 @@ contact_hits = database.execute(
 
 print(f"{landing_hits} daily hits on landing.html, {contact_hits} daily hits on contact.html")
 
+# Weekly unique hits
+landing_hits = database.execute(
+    "select count(distinct checksum) from hashed_ips where page='landing' and timestamp "
+    + ">= datetime('now', '-144 hours')").fetchone()[0]
+
+contact_hits = database.execute(
+    "select count(distinct checksum) from hashed_ips where page='contact' and timestamp "
+    + ">= datetime('now', '-144 hours')").fetchone()[0]
+
+print(f"{landing_hits} weekly hits on landing.html, {contact_hits} weekly hits on contact.html")
+
+# Total unique hits
 landing_hits = database.execute(
     "select count(distinct checksum) from hashed_ips where page='landing'").fetchone()[0]
 
@@ -22,6 +35,7 @@ contact_hits = database.execute(
 
 print(f"{landing_hits} unique hits on landing.html, {contact_hits} unique hits on contact.html")
 
+# Total hits
 landing_hits = database.execute(
     "select count(id) from hashed_ips where page='landing'").fetchone()[0]
 
