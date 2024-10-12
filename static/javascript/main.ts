@@ -37,7 +37,9 @@ function get_welcome_blurb(hour_?: number): string {
 }
 
 function set_welcome_blurb() {
-  document.getElementById("welcome-blurb")!!.innerHTML = get_welcome_blurb()
+  const blurb = document.getElementById("welcome-blurb")
+  if (blurb != null)
+    blurb.innerHTML = get_welcome_blurb()
 }
 
 function set_sample_image(img_) {
@@ -163,7 +165,6 @@ function send_email() {
   body.value = ""
 
 }
-
 
 function ask_chatbot_question_interactively(question: string) {
   const host = location.host.startsWith("localhost") ?
