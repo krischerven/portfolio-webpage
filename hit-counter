@@ -33,7 +33,7 @@ portfolio_hits = database.execute(
 contact_hits = database.execute(
     "select count(distinct checksum) from hashed_ips where page='contact'").fetchone()[0]
 
-print(f"{portfolio_hits} unique hits on portfolio.html, {contact_hits} unique hits on contact.html")
+print(f"{portfolio_hits} total unique hits on portfolio.html, {contact_hits} total unique hits on contact.html")
 
 # Total hits
 portfolio_hits = database.execute(
