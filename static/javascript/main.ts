@@ -109,6 +109,17 @@ async function toggle_AI_assistant_dialogue() {
   }
 }
 
+async function set_freelancing_availability() {
+  while (!document.getElementById("freelancing-availability"))
+    await sleep(10)
+  const freelancing_availability = true
+  const element = document.getElementById("freelancing-availability")!!
+  if (freelancing_availability)
+    element.innerText = "I am currently open to freelancing and consulting."
+  else
+    element.innerText = "I am currently NOT open to freelancing and consulting."
+}
+
 function send_email() {
 
   const subject = (document.getElementById("send-email-subject") as HTMLTextAreaElement)!!
@@ -231,5 +242,8 @@ if (typeof document === 'undefined')
     });
   });
 
-if (typeof document !== 'undefined')
+
+if (typeof document !== 'undefined') {
   set_welcome_blurb()
+  set_freelancing_availability()
+}
