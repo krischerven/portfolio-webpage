@@ -76,6 +76,11 @@ div.subtext {
   padding-bottom: 10px;
 }
 
+p.subtext {
+  font-size: 1.1em;
+  font-style: italic;
+}
+
 #AI-assistant {
   opacity: 0;
   display: none;
