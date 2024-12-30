@@ -5,7 +5,7 @@
 #                                                    #
 # Usage (brackets represent optional arguments):     #
 #   ./main.py                                        #
-#   ./main.py [+debug] [+skip-npm]                   #
+#   ./main.py [+debug] [+skip-npm] [+skip-git]       #
 #                                                    #
 ######################################################
 
@@ -157,5 +157,6 @@ if __name__ == "__main__":
     # problematic if we run server_work() here.
     #
     # For gunicorn, server_work() runs as part of the update-webpage bash script.
-    server_work(tscompile_npm_work=("+skip-npm" not in sys.argv))
+    server_work(tscompile_npm_work=("+skip-npm" not in sys.argv),
+                git_work=("+skip-git" not in sys.argv))
     main()

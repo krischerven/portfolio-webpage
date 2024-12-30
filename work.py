@@ -16,7 +16,7 @@ def announce_and_run(program):
     return os.system(program)
 
 
-def server_work(tscompile=True, tscompile_npm_work=True):
+def server_work(tscompile=True, tscompile_npm_work=True, git_work=True):
     "Runs important server work before the webpage goes live."
     if os.path.exists(".server-work.lock"):
         logger.debug(".server-work.lock exists; skipping running server_work()")
@@ -26,9 +26,10 @@ def server_work(tscompile=True, tscompile_npm_work=True):
     # This is 1) fast 2) never errors, so put it first
     announce_and_run("./create-download-hardlinks")
     #
-    announce_and_run("git pull")
-    announce_and_run("git submodule update --init --recursive")
-    announce_and_run("git submodule update --remote")
+    if git_work:
+        announce_and_run("git pull")
+        announce_and_run("git submodule update --init --recursive")
+        announce_and_run("git submodule update --remote")
     if tscompile:
         if os.system("which npx > /dev/null 2>&1") == 256:
             logger.debug("npx (npm) does not exist in the system path, so ./tscompile is "
