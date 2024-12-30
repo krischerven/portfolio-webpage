@@ -2,6 +2,7 @@
    * main.ts: Typescript functionality for portfolio.html *
    ****************************************************** */
 
+globalThis.crypto ??= require("node:crypto").webcrypto
 const chatbotUUID = crypto.randomUUID()
 
 function set_code_tab(name: String) {

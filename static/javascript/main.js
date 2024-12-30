@@ -1,4 +1,5 @@
 "use strict";
+globalThis.crypto ??= require("node:crypto").webcrypto;
 const chatbotUUID = crypto.randomUUID();
 function set_code_tab(name) {
     for (const lang of ["welcome", "metaprog", "search-for-users", "website", "chatbot"]) {
