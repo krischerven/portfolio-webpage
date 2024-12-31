@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+systemctl status nginx
+systemctl status gitea
+systemctl status gitea-daemon
+systemctl status portfolio-webpage-1
+systemctl status portfolio-webpage-2
