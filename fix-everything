@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+echo "Reloading nginx..."
+sudo systemctl reload nginx
+echo "Restarting nginx..."
+sudo systemctl restart nginx
+echo "Restarting gitea..."
+sudo systemctl restart gitea
+echo "Restarting gitea-daemon.service..."
+sudo systemctl restart gitea-daemon
+echo "Restarting portfolio-webpage-1.service..."
+sudo systemctl restart portfolio-webpage-1
+echo "Restarting portfolio-webpage-2.service..."
+sudo systemctl restart portfolio-webpage-2
