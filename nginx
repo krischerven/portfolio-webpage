@@ -8,10 +8,12 @@ server {
 
   server_name krischerven.info www.krischerven.info;
 
-  location / {
-    include proxy_params;
-    proxy_pass http://unix:/home/dev/portfolio-webpage/portfolio-webpage-1.sock;
-  }
+  # location / {
+  #   include proxy_params;
+  #   proxy_pass http://unix:/home/dev/portfolio-webpage/portfolio-webpage-1.sock;
+  # }
+
+  return 301 https://github.com/krischerven;
 }
 
 # krischerven.info (no SSL)
@@ -21,10 +23,10 @@ server {
   listen [::]:80;
   server_name krischerven.info www.krischerven.info;
 
-  location / {
-    include proxy_params;
-    proxy_pass http://unix:/home/dev/portfolio-webpage/portfolio-webpage-2.sock;
-  }
+  # location / {
+  #   include proxy_params;
+  #   proxy_pass http://unix:/home/dev/portfolio-webpage/portfolio-webpage-2.sock;
+  # }
 
   return 301 https://$host$request_uri;
 }
